@@ -1,18 +1,36 @@
 <script>
 	import link from "$lib/images/link.svg";
 	import insta from "$lib/images/insta.svg";
+	import github from "$lib/images/github.svg";
 </script>
 
 <div>
 	<div class="content">
 		<a class="link" style="background-image: url({insta});"
-			href="https://instagram.com/_wooncloud">인스타</a>
+			href="https://instagram.com/_wooncloud"
+			target="_blank" rel="noopener noreferrer">
+			인스타
+		</a>
 		<a class="link" style="background-image: url({link});"
-			href="https://wooncloud.tistory.com">티스토리</a>
+			href="https://wooncloud.tistory.com"
+			target="_blank" rel="noopener noreferrer">
+			티스토리
+		</a>
+		<a class="link" style="background-image: url({github});"
+			href="https://github.com/wooncloud"
+			target="_blank" rel="noopener noreferrer">
+			깃허브
+		</a>
 		<a class="link" style="background-image: url({insta});"
-			href="https://instagram.com/dosiowl_official">도시부엉</a>
+			href="https://instagram.com/dosiowl_official"
+			target="_blank" rel="noopener noreferrer">
+			도시부엉
+		</a>
 		<a class="link" style="background-image: url({link});"
-			href="https://litt.ly/dosiowl">도시부엉 리틀리</a>
+			href="https://litt.ly/dosiowl"
+			target="_blank" rel="noopener noreferrer">
+			도시부엉 리틀리
+		</a>
 	</div>
 </div>
 
