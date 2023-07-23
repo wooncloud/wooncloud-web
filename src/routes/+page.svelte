@@ -9,27 +9,27 @@
 		<a class="link" style="background-image: url({insta});"
 			href="https://instagram.com/_wooncloud"
 			target="_blank" rel="noopener noreferrer">
-			인스타
+			인스타 (instagram)
 		</a>
 		<a class="link" style="background-image: url({link});"
 			href="https://wooncloud.tistory.com"
 			target="_blank" rel="noopener noreferrer">
-			티스토리
+			블로그 (blog)
 		</a>
 		<a class="link" style="background-image: url({github});"
 			href="https://github.com/wooncloud"
 			target="_blank" rel="noopener noreferrer">
-			깃허브
+			깃허브 (github)
 		</a>
 		<a class="link" style="background-image: url({insta});"
 			href="https://instagram.com/dosiowl_official"
 			target="_blank" rel="noopener noreferrer">
-			도시부엉
+			도시부엉 인스타<br>(dosiowl instagram)
 		</a>
 		<a class="link" style="background-image: url({link});"
 			href="https://litt.ly/dosiowl"
 			target="_blank" rel="noopener noreferrer">
-			도시부엉 리틀리
+			도시부엉 리틀리<br>(dosiowl littly)
 		</a>
 	</div>
 </div>
@@ -58,14 +58,15 @@
 		background-size: contain;
 		background-position: 3% 50%;
 		background-size: 10%;
+		text-align: center;
 	}
 
 	.link:hover {
-		background-color: gray;
-		color: white;
+		background-color: lightgray;
 	}
 
 	.link:active {
 		background-color: dimgray;
+		color: white;
 	}
 </style>
