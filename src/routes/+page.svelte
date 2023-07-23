@@ -1,59 +1,53 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import link from "$lib/images/link.svg";
+	import insta from "$lib/images/insta.svg";
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
-
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+<div>
+	<div class="content">
+		<a class="link" style="background-image: url({insta});"
+			href="https://instagram.com/_wooncloud">인스타</a>
+		<a class="link" style="background-image: url({link});"
+			href="https://wooncloud.tistory.com">티스토리</a>
+		<a class="link" style="background-image: url({insta});"
+			href="https://instagram.com/dosiowl_official">도시부엉</a>
+		<a class="link" style="background-image: url({link});"
+			href="https://litt.ly/dosiowl">도시부엉 리틀리</a>
+	</div>
+</div>
 
 <style>
-	section {
+	.content {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
+	}
+
+	.link {
+		text-decoration: none;
+		margin: 10px 0;
+		padding: 10px;
+		border-radius: 10px;
+		border: 2px solid dimgray;
+		min-height: 50px;
+		display: flex;
 		justify-content: center;
 		align-items: center;
-		flex: 0.6;
+		color: black;
+		font-weight: bold;
+		transition: all 0.2s ease-in-out;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 3% 50%;
+		background-size: 10%;
 	}
 
-	h1 {
-		width: 100%;
+	.link:hover {
+		background-color: gray;
+		color: white;
 	}
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	.link:active {
+		background-color: dimgray;
 	}
 </style>
