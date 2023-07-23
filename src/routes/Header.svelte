@@ -15,6 +15,7 @@
 				console.error('Failed to copy link: ', error);
 		} finally {
 				document.body.removeChild(tempInput);
+				alert("링크가 복사 되었습니다.");
 		}
 	}
 </script>
