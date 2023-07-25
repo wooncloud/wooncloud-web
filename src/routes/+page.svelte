@@ -2,6 +2,7 @@
 	import link from "$lib/images/link.svg";
 	import insta from "$lib/images/insta.svg";
 	import github from "$lib/images/github.svg";
+	(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
 <div>
@@ -32,6 +33,13 @@
 			도시부엉 리틀리<br>(dosiowl littly)
 		</a>
 	</div>
+	<!-- wooncloud ad 01 -->
+	<ins class="adsbygoogle"
+			style="display:block"
+			data-ad-client="ca-pub-1003422907558705"
+			data-ad-slot="2923922799"
+			data-ad-format="auto"
+			data-full-width-responsive="true"></ins>
 </div>
 
 <style>
