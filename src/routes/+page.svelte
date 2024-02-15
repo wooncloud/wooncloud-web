@@ -6,11 +6,6 @@
 
 <div>
 	<div class="content">
-		<a class="link" style="background-image: url({insta});"
-			href="https://instagram.com/_wooncloud"
-			target="_blank" rel="noopener noreferrer">
-			인스타 (instagram)
-		</a>
 		<a class="link" style="background-image: url({link});"
 			href="https://wooncloud.tistory.com"
 			target="_blank" rel="noopener noreferrer">
@@ -20,6 +15,11 @@
 			href="https://github.com/wooncloud"
 			target="_blank" rel="noopener noreferrer">
 			깃허브 (github)
+		</a>
+		<a class="link" style="background-image: url({insta});"
+			href="https://instagram.com/_wooncloud"
+			target="_blank" rel="noopener noreferrer">
+			인스타 (instagram)
 		</a>
 		<a class="link" style="background-image: url({insta});"
 			href="https://instagram.com/dosiowl_official"
