@@ -1,9 +1,6 @@
 <script>
 	import { Button } from "$lib/components/ui/button";
 	import { Instagram, PanelTop, Github, Rss } from 'lucide-svelte';
-	import link from "$lib/images/link.svg";
-	import insta from "$lib/images/insta.svg";
-	import github from "$lib/images/github.svg";
 </script>
 
 <div>
