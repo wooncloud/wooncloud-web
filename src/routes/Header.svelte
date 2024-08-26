@@ -16,12 +16,12 @@
 		tempInput.select();
 
 		try {
-				navigator.clipboard.writeText(siteLink);
+			navigator.clipboard.writeText(siteLink);
 		} catch (error) {
-				console.error('Failed to copy link: ', error);
+			console.error('Failed to copy link: ', error);
 		} finally {
-				document.body.removeChild(tempInput);
-				alert("링크가 복사 되었습니다.");
+			document.body.removeChild(tempInput);
+			alert("링크가 복사 되었습니다.");
 		}
 	}
 </script>
@@ -50,12 +50,8 @@
 				<Avatar.Fallback>LOGO</Avatar.Fallback>
 			</Avatar.Root>
 		</a>
-
-		<!-- <a href="/">
-			<img src={logo} alt="logo" class="logo-image" />
-		</a> -->
-		<h1>운구름</h1>
-		<div>
+		<div class="mt-5">
+			<h1 class="font-bold">운구름</h1>
 			<p>wooncloud</p>
 		</div>
 	</div>
