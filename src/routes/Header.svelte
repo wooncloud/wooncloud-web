@@ -8,7 +8,7 @@
 	
 	import logo from '$lib/images/logo.png';
 
-	function copySiteLinkToClipboard() {
+	async function copySiteLinkToClipboard() {
 		const siteLink = window.location.href;
 		const tempInput = document.createElement('input');
 		document.body.appendChild(tempInput);
@@ -16,12 +16,16 @@
 		tempInput.select();
 
 		try {
-			navigator.clipboard.writeText(siteLink);
+			const success = document.execCommand('copy');
+			if (!success && navigator.clipboard) {
+				await navigator.clipboard.writeText(siteLink);
+			}
+			alert("링크가 복사 되었습니다.");
 		} catch (error) {
 			console.error('Failed to copy link: ', error);
+			alert("링크 복사에 실패했습니다.");
 		} finally {
 			document.body.removeChild(tempInput);
-			alert("링크가 복사 되었습니다.");
 		}
 	}
 </script>

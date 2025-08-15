@@ -207,4 +207,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# ai
+CLAUDE.md
+
 # End of https://www.toptal.com/developers/gitignore/api/svelte,node,windows,macos
