@@ -1,7 +1,0 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /_app/
-
-Sitemap: https://wooncloud.com/sitemap.xml

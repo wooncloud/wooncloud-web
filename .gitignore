@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/svelte,node,windows,macos
-# Edit at https://www.toptal.com/developers/gitignore?templates=svelte,node,windows,macos
+# Created by https://www.toptal.com/developers/gitignore/api/node,nextjs,windows,macos,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,nextjs,windows,macos,visualstudiocode
 
 ### macOS ###
 # General
@@ -34,15 +34,46 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
+### NextJS ###
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
 ### Node ###
 # Logs
 logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 lerna-debug.log*
-.pnpm-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -83,7 +114,6 @@ jspm_packages/
 web_modules/
 
 # TypeScript cache
-*.tsbuildinfo
 
 # Optional npm cache directory
 .npm
@@ -174,12 +204,24 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-### Svelte ###
-# gitignore template for the SvelteKit, frontend web component framework
-# website: https://kit.svelte.dev/
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
 
-.svelte-kit/
-package
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
 
 ### Windows ###
 # Windows thumbnail cache files
@@ -207,7 +249,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# ai
-CLAUDE.md
-
-# End of https://www.toptal.com/developers/gitignore/api/svelte,node,windows,macos
+# End of https://www.toptal.com/developers/gitignore/api/node,nextjs,windows,macos,visualstudiocode
