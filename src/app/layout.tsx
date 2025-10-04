@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 
@@ -65,19 +66,6 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1003422907558705"
           crossOrigin="anonymous"
         />
-        
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMDV15DWKY" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-ZMDV15DWKY');
-            `
-          }}
-        />
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
@@ -88,6 +76,20 @@ export default function RootLayout({
             </main>
           </div>
         </ThemeProvider>
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZMDV15DWKY"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZMDV15DWKY');
+          `}
+        </Script>
       </body>
     </html>
   );
