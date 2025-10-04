@@ -34,6 +34,31 @@
 			</CardContent>
 		</Card>
 	{/each}
+
+	<div>
+		<!-- 나에 대해서 -->
+	</div>
+	<div>
+		<!-- 기술 스택 -->
+	</div>
+	<div>
+		<!-- 경력 -->
+	</div>
+	<div>
+		<!-- 프로젝트 -->
+	</div>
+	<div>
+		<!-- 그 외 활동 -->
+		<div>
+			<!-- 자격증 -->
+			 <card>
+				s
+			 </card>
+		</div>
+	</div>
+	<div>
+		<!-- 문의 -->
+	</div>
 </div>
 
 <style>

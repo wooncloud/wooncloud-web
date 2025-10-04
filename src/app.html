@@ -1,72 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	<!-- SEO Meta Tags -->
-	<title>운구름 | wooncloud homepage</title>
-	<meta name="description" content="운구름(wooncloud) - Korean developer's homepage. Blog, GitHub, Instagram and social links." />
-	<meta name="keywords" content="wooncloud, 운구름, developer, 개발자, blog, github, instagram, 블로그, 깃허브, 인스타" />
-	<meta name="author" content="운구름 (wooncloud)" />
-	<meta name="robots" content="index, follow" />
-	<link rel="canonical" href="https://wooncloud.com/" />
-	
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://wooncloud.com/" />
-	<meta property="og:title" content="운구름 | wooncloud homepage" />
-	<meta property="og:description" content="운구름(wooncloud) - Korean developer's homepage. Blog, GitHub, Instagram and social links." />
-	<meta property="og:site_name" content="운구름" />
-	<meta property="og:locale" content="ko_KR" />
-	
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary" />
-	<meta property="twitter:url" content="https://wooncloud.com/" />
-	<meta property="twitter:title" content="운구름 | wooncloud homepage" />
-	<meta property="twitter:description" content="운구름(wooncloud) - Korean developer's homepage. Blog, GitHub, Instagram and social links." />
-	
-	<!-- Structured Data -->
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Person",
-		"name": "운구름",
-		"alternateName": "wooncloud",
-		"url": "https://wooncloud.com",
-		"sameAs": [
-			"https://wooncloud.tistory.com",
-			"https://github.com/wooncloud",
-			"https://instagram.com/_wooncloud"
-		],
-		"jobTitle": "Developer",
-		"description": "Korean developer's homepage with links to blog, GitHub, and social media."
-	}
-	</script>
-	
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1003422907558705"
-		crossorigin="anonymous"></script>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMDV15DWKY"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+    <!-- SEO Meta Tags -->
+    <title>운구름 | wooncloud homepage</title>
+    <meta
+      name="description"
+      content="운구름(wooncloud) - Korean developer's homepage. Blog, GitHub, Instagram and social links."
+    />
+    <meta
+      name="keywords"
+      content="wooncloud, 운구름, developer, 개발자, blog, github, instagram, 블로그, 깃허브, 인스타"
+    />
+    <meta name="author" content="운구름 (wooncloud)" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://wooncloud.com/" />
 
-		gtag('config', 'G-ZMDV15DWKY');
-	</script>
-	%sveltekit.head%
-	<style>
-		body {
-			margin: 0;
-		}
-	</style>
-</head>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wooncloud.com/" />
+    <meta property="og:title" content="운구름 | wooncloud homepage" />
+    <meta
+      property="og:description"
+      content="운구름(wooncloud) - Korean developer's homepage. Blog, GitHub, Instagram and social links."
+    />
+    <meta property="og:site_name" content="운구름" />
+    <meta property="og:locale" content="ko_KR" />
 
-<body data-sveltekit-preload-data="hover">
-	<div style="display: contents">%sveltekit.body%</div>
-</body>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://wooncloud.com/" />
+    <meta property="twitter:title" content="운구름 | wooncloud homepage" />
+    <meta
+      property="twitter:description"
+      content="운구름(wooncloud) - Korean developer's homepage. Blog, GitHub, Instagram and social links."
+    />
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "운구름",
+        "alternateName": "wooncloud",
+        "url": "https://wooncloud.com",
+        "sameAs": [
+          "https://wooncloud.tistory.com",
+          "https://github.com/wooncloud",
+          "https://instagram.com/_wooncloud"
+        ],
+        "jobTitle": "Developer",
+        "description": "Korean developer's homepage with links to blog, GitHub, and social media."
+      }
+    </script>
+
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1003422907558705"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMDV15DWKY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZMDV15DWKY');
+    </script>
+    %sveltekit.head%
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
 </html>
