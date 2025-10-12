@@ -1,8 +1,12 @@
-- 자기소개 추가
 - 기술스택 내용 추가
 - madrascheck 내용 채우기
+    - 주 업무: 협업툴 플로우 SaaS서비스 신규개발 및 유지보수
 - madrascheck에서 한 프로젝트 기입
+    - 기술스택: Java, Javascript, TypeScript, Jex Framework, 
+    - 공지, 배너, 플랜, 어드민, Task, 파일보안, 로그인 보안, 파트너시스템, AI 및 LLM 서버, 웹소켓을 이용한 실시간 처리, 마스터어드민, 캘린더
 - contact 완성하기
+- toc 추가
+- 상단 이동 버튼 (PC화면)
 
 # 자기소개
 
