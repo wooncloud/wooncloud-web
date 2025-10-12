@@ -18,7 +18,7 @@ export default function CertificationCard({
   date,
 }: CertificationCardProps) {
   return (
-    <Card className="overflow-hidden border-0 bg-card/50 backdrop-blur-sm">
+    <Card className="border">
       <CardHeader className="pb-3">
         <CardTitle className="text-base font-semibold">{title}</CardTitle>
         {description && (

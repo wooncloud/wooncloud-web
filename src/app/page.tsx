@@ -1,61 +1,49 @@
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
-import { getLinksByGroup } from '@/lib/data/links';
+import { links } from '@/lib/data/links';
 import Link from 'next/link';
 import CertificationCard from '@/components/CertificationCard';
+import Profile from "@/components/Profile";
+import SkillStack from '@/components/SkillStack';
 
 export default function Home() {
-  const groupedLinks = getLinksByGroup();
-
   return (
-    <div className="space-y-6">
-      {Object.entries(groupedLinks).map(([groupId, group]) => (
-        <Card key={groupId} className="overflow-hidden border-0 bg-card/50 backdrop-blur-sm">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-center text-base font-medium text-muted-foreground">
-              {group.name}
-            </CardTitle>
-            <Separator className="mt-2 bg-border/50" />
-          </CardHeader>
-          <CardContent className="space-y-2 pt-0">
-            {group.links.map((link) => {
-              const IconComponent = link.icon;
-              return (
-                <Link key={link.id} href={link.url} target="_blank" rel="noopener noreferrer">
-                  <Button
-                    className="w-full transition-all duration-200 hover:scale-[1.02] hover:shadow-md active:scale-[0.98] bg-background/80 hover:bg-background border border-border/50 hover:border-border"
-                    variant="outline"
-                    aria-label={link.ariaLabel}
-                  >
-                    <IconComponent size={18} className="mr-2" />
-                    <span className="text-sm font-medium">{link.label}</span>
-                  </Button>
-                </Link>
-              );
-            })}
-          </CardContent>
-        </Card>
-      ))}
+    <div className="py-6">
+      <div className="py-6">
+        <Profile />
+      </div>
+      <div className="my-4">
+        {links.map((link) => {
+          const IconComponent = link.icon;
+          return (
+            <div className="my-2">
+              <Link key={link.id} href={link.url} target="_blank" rel="noopener noreferrer">
+                <Button
+                  className="w-full"
+                  variant="outline"
+                  aria-label={link.ariaLabel}
+                >
+                  <IconComponent size={18} className="mr-2" />
+                  <span className="text-sm font-medium">{link.label}</span>
+                </Button>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
 
-      <div>
+      <div className="my-4">
         {/* 나에 대해서 */}
       </div>
-      <div>
+      <div className="my-4">
         {/* 기술 스택 */}
       </div>
-      <div>
+      <div className="my-4">
         {/* 경력 */}
       </div>
-      <div>
+      <div className="my-4">
         {/* 프로젝트 */}
       </div>
-      <div>
+      <div className="my-4">
         {/* 그 외 활동 */}
         <div className="space-y-3">
           {/* 자격증 */}
@@ -74,12 +62,9 @@ export default function Home() {
           />
         </div>
       </div>
-      <div>
+      <div className="my-4">
         <Link href="/contact">
-          <Button
-            className="w-full transition-all duration-200 hover:scale-[1.02] hover:shadow-md active:scale-[0.98] bg-background/80 hover:bg-background border border-border/50 hover:border-border"
-            variant="outline"
-          >
+          <Button className="w-full">
             <span className="text-sm font-medium">Contact</span>
           </Button>
         </Link>
