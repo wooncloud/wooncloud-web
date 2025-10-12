@@ -2,28 +2,99 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 
+const SITE_URL = "https://wooncloud.com";
+const SEO_TITLE = "운구름 | Flow SaaS 풀스택 개발자";
+const SEO_DESCRIPTION =
+  "Flow 협업툴을 개발하는 풀스택 개발자 운구름의 포트폴리오. JavaScript·TypeScript·Java 기반 SaaS 프로젝트, 경력, 기술 스택, 토이 프로젝트와 연락처 정보를 확인하세요.";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "운구름",
+  alternateName: "운구름",
+  url: SITE_URL,
+  sameAs: ["https://wooncloud.tistory.com", "https://github.com/wooncloud"],
+  jobTitle: "SaaS Full-Stack Developer",
+  worksFor: [
+    {
+      "@type": "Organization",
+      name: "마드라스체크(주)"
+    }
+  ],
+  knowsAbout: [
+    "SaaS",
+    "협업툴",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Java",
+    "Spring"
+  ],
+  knowsLanguage: ["ko", "en"],
+  description: SEO_DESCRIPTION
+};
+
 export const metadata: Metadata = {
-  title: "운구름 | wooncloud homepage",
-  description: "운구름(wooncloud) - Korean developer's homepage. Blog, GitHub, social links.",
-  keywords: ["wooncloud", "운구름", "developer", "개발자", "blog", "github", "instagram", "블로그", "깃허브", "인스타"],
-  authors: [{ name: "운구름 (wooncloud)" }],
-  robots: "index, follow",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SEO_TITLE,
+    template: "%s | 운구름"
+  },
+  description: SEO_DESCRIPTION,
+  keywords: [
+    "운구름",
+    "wooncloud",
+    "풀스택 개발자",
+    "Flow",
+    "플로우",
+    "SaaS",
+    "웹 개발 포트폴리오",
+    "JavaScript",
+    "TypeScript",
+    "Java",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Spring",
+    "웹 서버 개발",
+    "경력 소개",
+    "프로젝트"
+  ],
+  authors: [
+    { name: "운구름", url: SITE_URL }
+  ],
+  creator: "운구름",
+  publisher: "운구름",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
+  },
   alternates: {
-    canonical: "https://wooncloud.com/"
+    canonical: "/"
   },
   openGraph: {
     type: "website",
-    url: "https://wooncloud.com/",
-    title: "운구름 | wooncloud homepage",
-    description: "운구름(wooncloud) - Korean developer's homepage. Blog, GitHub, social links.",
-    siteName: "운구름",
+    url: SITE_URL,
+    title: SEO_TITLE,
+    description: SEO_DESCRIPTION,
+    siteName: "운구름 | wooncloud",
     locale: "ko_KR"
   },
   twitter: {
-    card: "summary",
-    title: "운구름 | wooncloud homepage",
-    description: "운구름(wooncloud) - Korean developer's homepage. Blog, GitHub, social links."
-  }
+    card: "summary_large_image",
+    title: SEO_TITLE,
+    description: SEO_DESCRIPTION
+  },
+  category: "technology"
 };
 
 export default function RootLayout({
@@ -41,19 +112,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "운구름",
-              "alternateName": "wooncloud",
-              "url": "https://wooncloud.com",
-              "sameAs": [
-                "https://wooncloud.tistory.com",
-                "https://github.com/wooncloud"
-              ],
-              "jobTitle": "Developer",
-              "description": "Korean developer's homepage with links to blog, GitHub, and social media."
-            })
+            __html: JSON.stringify(structuredData)
           }}
         />
 
