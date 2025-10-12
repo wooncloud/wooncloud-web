@@ -1,9 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import itm from '@/assets/images/experience/itm.webp';
 
 export default function ItmCorpExperiencePage() {
   return (
     <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">itm Corperation</h1>
+      <h1 className="text-3xl font-bold">itm Corporation</h1>
+      <Image src={itm} alt="itm Corporation" />
       <div className="space-y-4">
         <div className="space-y-1">
           <h2 className="text-xl font-semibold">관리팀 / 솔루션 웹 개발자</h2>

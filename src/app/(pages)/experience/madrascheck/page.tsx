@@ -1,7 +1,16 @@
+import Image from 'next/image';
+import madrascheck from '@/assets/images/experience/madrascheck.webp';
+import flow1 from '@/assets/images/experience/flow.webp';
+import flow2 from '@/assets/images/experience/flow2.webp';
+
 export default function MadrasCheckExperiencePage() {
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">마드라스체크</h1>
+      <div className="flex items-center gap-6">
+        <Image src={madrascheck} alt="마드라스체크" height={50} />
+        <Image src={flow1} alt="플로우 화면 1" height={50} />
+      </div>
       <div className="space-y-4">
         <div className="space-y-1">
           <h2 className="text-xl font-semibold">SaaS 서비스 풀스택 개발자</h2>
@@ -10,6 +19,7 @@ export default function MadrasCheckExperiencePage() {
             협업툴 플로우(Flow) SaaS 서비스의 기능 개발과 안정적인 운영을 담당하며 제품 가치 향상에 기여하고 있습니다.
           </p>
         </div>
+        <Image src={flow2} alt="플로우 화면 2" />
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">주요 업무</h3>
           <ul className="space-y-2 text-muted-foreground list-disc pl-6">

@@ -17,7 +17,7 @@ export const experiences: Experience[] = [
     path: '/experience/madrascheck'
   },
   {
-    id: 'itmcorp',
+    id: 'Itm Corporation',
     company: '(주) 아이티엠건축사사무소 (itm Corporation)',
     position: '관리팀 / 솔루션 웹 개발자',
     period: '2019.03.15. - 2020.11.20.',
@@ -25,7 +25,7 @@ export const experiences: Experience[] = [
     path: '/experience/itmcorp'
   },
   {
-    id: 'hangilcnc',
+    id: 'hangil C&C',
     company: '한길씨앤씨(주) (Hangil C&C)',
     position: '유니티 클라이언트 개발자',
     period: '2017.11.01. - 2019.03.09.',

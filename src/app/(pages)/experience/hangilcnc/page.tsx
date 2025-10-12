@@ -1,9 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import hangil from '@/assets/images/experience/hangil.webp';
 
 export default function HangilCncExperiencePage() {
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">한길씨앤씨</h1>
+      <Image src={hangil} alt="한길씨앤씨" />
       <div className="space-y-4">
         <div className="space-y-1">
           <h2 className="text-xl font-semibold">유니티 클라이언트 개발자</h2>
