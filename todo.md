@@ -1,0 +1,5 @@
+- 자기소개 추가
+- 기술스택 내용 추가
+- madrascheck 내용 채우기
+- madrascheck에서 한 프로젝트 기입
+- contact 완성하기
