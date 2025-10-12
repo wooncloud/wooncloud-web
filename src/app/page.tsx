@@ -83,7 +83,7 @@ export default function Home() {
         <hr />
           <div className="py-3 flex flex-col gap-4">
             <h4 className="text-lg font-bold">Certification</h4>
-            <div className="text-sm text-muted-foreground space-y-3">
+            <div className="space-y-3">
               <CertificationCard title="정보처리기사" date="2021.06.03" />
               <CertificationCard title="SQLD" date="2021.06.03" />
               <CertificationCard title="GTQ1급" description="GTQ그래픽기술자격 1급" date="2013.02.15" />
@@ -91,7 +91,7 @@ export default function Home() {
           </div>
           <div className="py-3 flex flex-col gap-4">
             <h4 className="text-lg font-bold">Education</h4>
-            <div className="text-sm text-muted-foreground space-y-3">
+            <div className="space-y-3">
               <EducationCard title="동국대학교 경주" startDate="2011.03" endDate="2018.02" description="컴퓨터공학과" />
               <EducationCard title="구디아카데미" startDate="2021.02" endDate="2021.08" description="응용SW기반 빅데이터UI전문가 과정" />
             </div>
