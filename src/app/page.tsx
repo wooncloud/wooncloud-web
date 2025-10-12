@@ -20,8 +20,8 @@ export default function Home() {
         {links.map((link) => {
           const IconComponent = link.icon;
           return (
-            <div className="my-2">
-              <Link key={link.id} href={link.url} target="_blank" rel="noopener noreferrer">
+            <div key={link.id} className="my-2">
+              <Link href={link.url} target="_blank" rel="noopener noreferrer">
                 <Button
                   className="w-full"
                   variant="outline"
