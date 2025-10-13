@@ -1,0 +1,12 @@
+# robots.txt for wooncloud.com
+
+# Allow all bots to crawl entire site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://wooncloud.com/sitemap.xml
+
+# Crawl-delay (optional, controls bot speed)
+# User-agent: *
+# Crawl-delay: 10
