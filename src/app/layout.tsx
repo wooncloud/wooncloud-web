@@ -124,8 +124,8 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div className="flex flex-col min-h-screen w-full max-w-[700px] mx-auto px-4">
-          <main className="transform-gpu will-change-transform">
+        <div className="flex flex-col min-h-screen w-full max-w-[700px] mx-auto">
+          <main>
             {children}
           </main>
         </div>

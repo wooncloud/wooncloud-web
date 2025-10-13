@@ -9,10 +9,11 @@ import AboutMe from '@/components/AboutMe';
 import Experience from '@/components/Experience';
 import Project from '@/components/Project';
 import ToyProjectCard from '@/components/ToyProjectCard';
+import FloatingButton from '@/components/FloatingButton';
 
 export default function Home() {
   return (
-    <div className="py-6">
+    <div className="pb-6 px-4">
       <div className="py-4">
         <Profile />
       </div>
@@ -41,7 +42,7 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="pt-2 pb-6 mb-6">
+      <div id="about-me" className="pt-2 pb-6 mb-6">
         {/* 나에 대해서 */}
         <div className="space-y-3">
           <h2 className="text-2xl font-bold">About Me</h2>
@@ -49,8 +50,8 @@ export default function Home() {
           <AboutMe />
         </div>
       </div>
-      
-      <div className="pt-2 pb-6 mb-6">
+
+      <div id="skill-stack" className="pt-2 pb-6 mb-6">
         {/* 기술스택 */}
         <div className="space-y-3">
           <h2 className="text-2xl font-bold">Skill Stack</h2>
@@ -58,8 +59,8 @@ export default function Home() {
           <SkillStack />
         </div>
       </div>
-      
-      <div className="pt-2 pb-6 mb-6">
+
+      <div id="experience" className="pt-2 pb-6 mb-6">
         {/* 경력 */}
         <div className="space-y-3">
           <h2 className="text-2xl font-bold">Experience</h2>
@@ -67,8 +68,8 @@ export default function Home() {
           <Experience />
         </div>
       </div>
-      
-      <div className="pt-2 pb-6 mb-6">
+
+      <div id="project" className="pt-2 pb-6 mb-6">
         {/* 프로젝트 */}
         <div className="space-y-3">
           <h2 className="text-2xl font-bold">Project</h2>
@@ -76,11 +77,11 @@ export default function Home() {
           <Project />
         </div>
       </div>
-      
-      <div className="py-4">
+
+      <div id="activities" className="py-4">
         <div className="space-y-3">
-        <h2 className="text-2xl font-bold">Activities</h2>
-        <hr />
+          <h2 className="text-2xl font-bold">Activities</h2>
+          <hr />
           <div className="py-3 flex flex-col gap-4">
             <h4 className="text-lg font-bold">Certification</h4>
             <div className="space-y-3">
@@ -113,6 +114,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <FloatingButton />
     </div>
   );
 }

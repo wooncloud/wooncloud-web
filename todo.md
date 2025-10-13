@@ -4,17 +4,14 @@
 - madrascheck에서 한 프로젝트 기입
     - 기술스택: Java, Javascript, TypeScript, Jex Framework, 
     - 공지, 배너, 플랜, 어드민, Task, 파일보안, 로그인보안, 파트너시스템, AI 및 LLM 서버, 웹소켓을 이용한 실시간 처리, 마스터어드민, 캘린더
-        - 업무, 간트차트 리뉴얼 개발
-        - 플로우 캘린더 개발
-        - 플로우 AI / LLM 서버 개발
-        - 파일보안 / 로그인 보안
-        - 플랜
-        - 공지, 배너
-        - 마스터어드민
-        - 그 외 어드민, 파트너 시스템, 웹소켓 및 플로우 전반적인 유지보수
-- contact 완성하기
-- toc 추가
-- 상단 이동 버튼 (PC화면)
+        - (flow-task) 업무, 간트차트 리뉴얼 개발
+        - (flow-calendar) 플로우 캘린더 개발
+        - (flow-ai) 플로우 AI / LLM 서버 개발
+        - (flow-security) 파일보안 / 로그인 보안
+        - (flow-plan) 플랜
+        - (flow-notice) 공지, 배너
+        - (flow-master) 마스터어드민
+        - (flow-qa) 그 외 어드민, 파트너 시스템, 웹소켓 및 플로우 전반적인 유지보수
 
 # 자기소개
 
