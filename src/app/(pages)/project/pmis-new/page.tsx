@@ -18,7 +18,7 @@ export default function PmisNewDevelopmentPage() {
           <Badge variant="outline">jQuery</Badge>
           <Badge variant="outline">Infragistics</Badge>
         </div>
-        <p className="text-muted-foreground">2020.04 - 재직 중 퇴사</p>
+        <p className="text-muted-foreground">2020.04 - 2020.11</p>
         <div className="flex flex-col gap-4">
           <Image src={pmis2} alt="pmis2" width={1000} height={1000} />
         </div>
