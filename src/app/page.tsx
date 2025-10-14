@@ -10,6 +10,7 @@ import Experience from '@/components/Experience';
 import Project from '@/components/Project';
 import ToyProjectCard from '@/components/ToyProjectCard';
 import FloatingButton from '@/components/FloatingButton';
+import Notice from '@/components/Notice';
 
 export default function Home() {
   return (
@@ -115,6 +116,7 @@ export default function Home() {
         </div>
       </div>
       <FloatingButton />
+      <Notice />
     </div>
   );
 }
