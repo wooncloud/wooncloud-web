@@ -26,7 +26,7 @@ export default function FlowTaskProjectPage() {
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <p className="text-muted-foreground">
-            Flow 협업툴의 업무 관리 및 간트차트 기능을 Preact 기반으로 전면 리뉴얼하여 성능과 사용자 경험을 개선했습니다.
+            협업툴 flow의 업무 관리 및 간트차트 기능을 Preact 기반으로 전면 리뉴얼하여 성능과 사용자 경험을 개선했습니다.
             복잡한 프로젝트 일정 관리와 실시간 협업 기능을 지원하며, Java 백엔드와의 효율적인 데이터 통신을 구현했습니다.
           </p>
         </div>

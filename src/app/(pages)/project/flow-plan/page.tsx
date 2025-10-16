@@ -25,7 +25,7 @@ export default function FlowPlanProjectPage() {
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <p className="text-muted-foreground">
-            Flow 협업툴의 요금제 및 플랜 관리 시스템을 개발했습니다.
+            협업툴 flow의 요금제 및 플랜 관리 시스템을 개발했습니다.
             다양한 요금제 옵션과 사용자 권한 관리를 통해 고객의 니즈에 맞는 유연한 서비스를 제공하고,
             결제 시스템과의 통합을 통해 원활한 구독 관리 환경을 구축했습니다.
           </p>

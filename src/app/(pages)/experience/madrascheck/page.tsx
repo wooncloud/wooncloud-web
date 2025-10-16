@@ -16,7 +16,7 @@ export default function MadrasCheckExperiencePage() {
           <h2 className="text-xl font-semibold">SaaS 서비스 풀스택 개발자</h2>
           <p className="text-muted-foreground">2021.10.12. - 현재</p>
           <p className="text-muted-foreground">
-            협업툴 플로우(Flow) SaaS 서비스의 기능 개발과 모니터링 및 장애 대응 등 안정적인 운영을 담당하며 제품 가치 향상에 기여하고 있습니다.
+            협업툴 플로우(flow) SaaS 서비스의 기능 개발과 모니터링 및 장애 대응 등 안정적인 운영을 담당하며 제품 가치 향상에 기여하고 있습니다.
           </p>
           <p className="text-muted-foreground">
             업무, 캘린더, 파일·로그인 보안, AI/LLM 서버, 웹소켓 기반 실시간 처리, 마스터 어드민, 공지·배너, 플랜, 각종 어드민과 파트너 시스템 등 서비스 전반을 책임지고 있습니다.

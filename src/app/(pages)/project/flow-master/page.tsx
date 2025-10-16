@@ -23,7 +23,7 @@ export default function FlowMasterProjectPage() {
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <p className="text-muted-foreground">
-            Flow 협업툴의 마스터 관리자 시스템을 개발했습니다.
+            협업툴 flow의 마스터 관리자 시스템을 개발했습니다.
             전체 시스템 모니터링, 사용자 관리, 조직 관리, 시스템 설정 등 핵심 관리 기능을 제공하여
             서비스 운영의 효율성을 높이고 안정적인 서비스 제공을 지원합니다.
           </p>

@@ -23,7 +23,7 @@ export default function FlowCalendarProjectPage() {
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <p className="text-muted-foreground">
-            Flow 협업툴의 캘린더 기능을 개발하여 팀 일정 관리와 협업 효율성을 향상시켰습니다.
+            협업툴 flow의 캘린더 기능을 개발하여 팀 일정 관리와 협업 효율성을 향상시켰습니다.
             개인 및 팀 일정을 통합 관리하고, 실시간 동기화를 통해 원활한 협업 환경을 제공합니다.
           </p>
         </div>

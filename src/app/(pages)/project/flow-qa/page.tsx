@@ -23,7 +23,7 @@ export default function FlowQaProjectPage() {
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <p className="text-muted-foreground">
-            Flow 협업툴의 다양한 부가 기능과 시스템 전반의 유지보수를 담당했습니다.
+            협업툴 flow의 다양한 부가 기능과 시스템 전반의 유지보수를 담당했습니다.
             어드민 시스템, 파트너 관리 시스템, 실시간 웹소켓 통신 등의 개발 및 개선을 수행하고,
             버그 수정, 성능 최적화, 기능 개선을 통해 서비스의 안정성과 사용자 만족도를 높였습니다.
           </p>

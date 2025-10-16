@@ -3,9 +3,9 @@ import Script from "next/script";
 import "./globals.css";
 
 const SITE_URL = "https://wooncloud.com";
-const SEO_TITLE = "운구름 | Flow SaaS 풀스택 개발자";
+const SEO_TITLE = "운구름 | wooncloud";
 const SEO_DESCRIPTION =
-  "Flow 협업툴을 개발하는 풀스택 개발자 운구름의 포트폴리오. JavaScript·TypeScript·Java 기반 SaaS 프로젝트, 경력, 기술 스택, 토이 프로젝트와 연락처 정보를 확인하세요.";
+  "풀스택 개발자 운구름의 포트폴리오. JavaScript·TypeScript·Java 기반 SaaS 프로젝트, 경력, 기술 스택, 토이 프로젝트와 연락처 정보를 확인하세요.";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "운구름",
     "wooncloud",
     "풀스택 개발자",
-    "Flow",
+    "flow",
     "플로우",
     "SaaS",
     "웹 개발 포트폴리오",
@@ -87,12 +87,21 @@ export const metadata: Metadata = {
     title: SEO_TITLE,
     description: SEO_DESCRIPTION,
     siteName: "운구름 | wooncloud",
-    locale: "ko_KR"
+    locale: "ko_KR",
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: SEO_TITLE,
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: SEO_TITLE,
-    description: SEO_DESCRIPTION
+    description: SEO_DESCRIPTION,
+    images: [`${SITE_URL}/og-image.png`]
   },
   category: "technology"
 };

@@ -23,7 +23,7 @@ export default function FlowSecurityProjectPage() {
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <p className="text-muted-foreground">
-            Flow 협업툴의 보안 체계를 강화하여 파일 보안과 로그인 보안 기능을 구현했습니다.
+            협업툴 flow의 보안 체계를 강화하여 파일 보안과 로그인 보안 기능을 구현했습니다.
             파일 암호화, 접근 권한 관리, 다단계 인증 등을 통해 기업 데이터를 안전하게 보호하고,
             보안 취약점을 최소화하여 신뢰할 수 있는 협업 환경을 제공합니다.
           </p>

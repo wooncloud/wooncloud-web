@@ -25,7 +25,7 @@ export default function FlowNoticeProjectPage() {
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <p className="text-muted-foreground">
-            Flow 협업툴의 공지사항 및 배너 관리 시스템을 개발했습니다.
+            협업툴 flow의 공지사항 및 배너 관리 시스템을 개발했습니다.
             효과적인 정보 전달을 위한 공지사항 작성/게시 기능과 배너 관리 기능을 구현하여,
             중요한 업데이트와 이벤트를 사용자에게 효율적으로 전달할 수 있는 환경을 구축했습니다.
           </p>
