@@ -1,4 +1,6 @@
 import { Badge } from '@/components/ui/badge';
+import flowSecurity1 from '@/assets/images/project/flow/security1.webp';
+import Image from 'next/image';
 
 export default function FlowSecurityProjectPage() {
   return (
@@ -13,7 +15,10 @@ export default function FlowSecurityProjectPage() {
           <Badge>Jex Framework</Badge>
         </div>
         <div className="space-y-1">
-          <p className="text-muted-foreground">마드라스체크(주) · Flow SaaS 협업툴</p>
+          <p className="text-muted-foreground">마드라스체크(주) · SaaS 개발부</p>
+        </div>
+        <div className="flex flex-col gap-4">
+          <Image src={flowSecurity1} alt="flowSecurity1" width={1000} height={1000} />
         </div>
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>

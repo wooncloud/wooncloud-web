@@ -1,4 +1,7 @@
 import { Badge } from '@/components/ui/badge';
+import flowTask from '@/assets/images/project/flow/task.webp';
+import flowGantt from '@/assets/images/project/flow/gantt.webp';
+import Image from 'next/image';
 
 export default function FlowTaskProjectPage() {
   return (
@@ -14,7 +17,11 @@ export default function FlowTaskProjectPage() {
           <Badge>Jex Framework</Badge>
         </div>
         <div className="space-y-1">
-          <p className="text-muted-foreground">마드라스체크(주) · Flow SaaS 협업툴</p>
+          <p className="text-muted-foreground">마드라스체크(주) · SaaS 개발부</p>
+        </div>
+        <div className="flex flex-col gap-4">
+          <Image src={flowTask} alt="flowTask" width={1000} height={1000} />
+          <Image src={flowGantt} alt="flowGantt" width={1000} height={1000} />
         </div>
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
