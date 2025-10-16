@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useState } from 'react';
 import { getSupabaseClient } from '@/lib/supabase/client';
+import { sendDiscordNotification } from '@/lib/discord';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -50,6 +51,12 @@ export default function ContactPage() {
       if (error) {
         throw error;
       }
+
+      await sendDiscordNotification({
+        title,
+        email,
+        content,
+      });
 
       setFeedback({
         type: 'success',
