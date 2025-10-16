@@ -15,26 +15,19 @@ export function generatePageMetadata({
   keywords = [],
   path,
 }: PageMetadata): Metadata {
-  const fullTitle = `${title} | 운구름`;
   const url = `${SITE_URL}${path}`;
 
   return {
-    title: fullTitle,
+    title,
     description,
-    keywords: [
-      '운구름',
-      'wooncloud',
-      '풀스택 개발자',
-      'flow',
-      ...keywords,
-    ],
+    keywords: keywords.length > 0 ? keywords : undefined,
     alternates: {
       canonical: path,
     },
     openGraph: {
       type: 'website',
       url,
-      title: fullTitle,
+      title,
       description,
       siteName: '운구름 | wooncloud',
       locale: 'ko_KR',
@@ -43,13 +36,13 @@ export function generatePageMetadata({
           url: `${SITE_URL}/og-image.png`,
           width: 1200,
           height: 630,
-          alt: fullTitle,
+          alt: title,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: fullTitle,
+      title,
       description,
       images: [`${SITE_URL}/og-image.png`],
     },

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SEO_TITLE,
-    template: "%s | 운구름"
+    template: "%s | wooncloud"
   },
   description: SEO_DESCRIPTION,
   keywords: [
