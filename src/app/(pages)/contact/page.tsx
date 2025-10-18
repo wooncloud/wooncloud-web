@@ -80,6 +80,12 @@ export default function ContactPage() {
 
   return (
     <div className="space-y-6 py-6">
+      <div className="space-y-2">
+        <h1 className="text-3xl font-bold">Contact</h1>
+        <p className="text-muted-foreground">
+          문의 메시지는 Discord 웹훅을 통해 실시간으로 전달되어 빠른 확인과 답변이 가능합니다.
+        </p>
+      </div>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="title">이름</Label>
