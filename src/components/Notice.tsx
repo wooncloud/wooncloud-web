@@ -3,12 +3,41 @@
 import { useEffect } from 'react';
 import { Toaster } from '@/components/ui/sonner';
 import { toast } from 'sonner';
+import type { ExternalToast } from 'sonner';
 
-export default function Notice() {
+interface NoticeProps {
+  message: string;
+  position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center';
+  icon?: React.ReactNode;
+  duration?: number;
+  description?: string;
+  action?: {
+    label: string;
+    onClick: () => void;
+  };
+}
+
+export default function Notice({
+  message,
+  position = 'top-center',
+  icon,
+  duration = 4000,
+  description,
+  action,
+}: NoticeProps) {
   useEffect(() => {
-    console.log("현재 이 사이트는 개발중입니다.");
-    toast("현재 이 사이트는 개발중입니다.")
-  }, []);
+    const options: ExternalToast = {
+      duration,
+      icon,
+      description,
+      action: action ? {
+        label: action.label,
+        onClick: action.onClick,
+      } : undefined,
+    };
 
-  return <Toaster position="top-center" />;
+    toast(message, options);
+  }, [message, duration, icon, description, action]);
+
+  return <Toaster position={position} />;
 }
