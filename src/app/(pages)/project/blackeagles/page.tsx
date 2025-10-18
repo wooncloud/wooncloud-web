@@ -1,3 +1,5 @@
+'use client';
+
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import be1 from '@/assets/images/project/be/be1.webp';
@@ -7,8 +9,38 @@ import be4 from '@/assets/images/project/be/be4.webp';
 import be5 from '@/assets/images/project/be/be5.webp';
 import be6 from '@/assets/images/project/be/be6.webp';
 import be7 from '@/assets/images/project/be/be7.webp';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
+import { useEffect, useRef, useState } from 'react';
 
 export default function BlackEaglesVRSimulationPage() {
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  const images = [
+    { src: be1, alt: '블랙이글스 VR 시뮬레이션 화면 1' },
+    { src: be2, alt: '블랙이글스 VR 시뮬레이션 화면 2' },
+    { src: be3, alt: '블랙이글스 VR 시뮬레이션 화면 3' },
+    { src: be4, alt: '블랙이글스 VR 시뮬레이션 화면 4' },
+    { src: be5, alt: '블랙이글스 VR 시뮬레이션 화면 5' },
+    { src: be6, alt: '블랙이글스 VR 시뮬레이션 화면 6' },
+    { src: be7, alt: '블랙이글스 VR 시뮬레이션 화면 7' },
+  ];
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">블랙이글스 - 어트랙션 체험 VR 시뮬레이션</h1>
@@ -25,14 +57,34 @@ export default function BlackEaglesVRSimulationPage() {
         <div className="w-full aspect-video">
           <iframe className="w-full h-full" src="https://www.youtube.com/embed/jw37Vd0hMY8?si=yU3C2ofM2oEdXsBe" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
-        <div className="flex flex-col gap-4">
-          <Image src={be1} alt="블랙이글스 VR 시뮬레이션 화면 1" width={1200} height={675} />
-          <Image src={be2} alt="블랙이글스 VR 시뮬레이션 화면 2" width={1200} height={675} />
-          <Image src={be3} alt="블랙이글스 VR 시뮬레이션 화면 3" width={1200} height={675} />
-          <Image src={be4} alt="블랙이글스 VR 시뮬레이션 화면 4" width={1200} height={675} />
-          <Image src={be5} alt="블랙이글스 VR 시뮬레이션 화면 5" width={1200} height={675} />
-          <Image src={be6} alt="블랙이글스 VR 시뮬레이션 화면 6" width={1200} height={675} />
-          <Image src={be7} alt="블랙이글스 VR 시뮬레이션 화면 7" width={1200} height={675} />
+        <div className="space-y-2">
+          <Carousel
+            setApi={setApi}
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+          >
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+          <div className="text-center text-sm text-muted-foreground">
+            ({current} / {count})
+          </div>
         </div>
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>

@@ -1,3 +1,5 @@
+'use client';
+
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import itmERP1 from '@/assets/images/project/erp/itmerp1.webp';
@@ -5,8 +7,33 @@ import itmERP2 from '@/assets/images/project/erp/itmerp2.webp';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
+import { useEffect, useRef, useState } from 'react';
 
 export default function ErpIntranetSystemPage() {
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  const images = [
+    { src: itmERP1, alt: 'itmERP1' },
+    { src: itmERP2, alt: 'itmERP2' },
+  ];
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">ERP 시스템 개발 (회사 내부 인트라넷)</h1>
@@ -21,9 +48,34 @@ export default function ErpIntranetSystemPage() {
           <Badge variant="outline">Infragistics</Badge>
         </div>
         <p className="text-muted-foreground">2019.05 - 2019.10</p>
-        <div className="flex flex-col gap-4">
-          <Image src={itmERP1} alt="itmERP1" width={1000} height={1000} />
-          <Image src={itmERP2} alt="itmERP2" width={1000} height={1000} />
+        <div className="space-y-2">
+          <Carousel
+            setApi={setApi}
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+          >
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+          <div className="text-center text-sm text-muted-foreground">
+            ({current} / {count})
+          </div>
         </div>
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>

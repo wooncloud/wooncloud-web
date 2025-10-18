@@ -22,11 +22,11 @@ export default function AnimalCareProjectPage() {
         </div>
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
-          <p className="text-muted-foreground">
-            사용자·병원 관계자·관리자 3가지 유스케이스를 설계해 예약, 결제, 진료 관리까지 통합 제공하는 동물병원 예약 시스템을
-            Spring Framework 기반으로 구축했습니다. 프로젝트 설계와 공통 모듈, 화면 구조, 형상·데이터베이스 관리를 총괄하며 PM 역할을
-            수행했습니다.
-          </p>
+          <div className="text-muted-foreground">
+            <p>사용자·병원 관계자·관리자 3가지 유스케이스를 설계해 예약, 결제, 진료 관리까지 통합 제공하는 동물병원 예약 시스템을</p>
+            <p>Spring Framework 기반으로 구축했습니다. 프로젝트 설계와 공통 모듈, 화면 구조, 형상·데이터베이스 관리를 총괄하며 PM 역할을</p>
+            <p>수행했습니다.</p>
+          </div>
         </div>
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">담당 역할</h3>

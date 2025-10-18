@@ -1,17 +1,22 @@
 import { generatePageMetadata } from '@/lib/metadata';
 
 export const metadata = generatePageMetadata({
-  title: 'flow 보안 프로젝트',
+  title: 'flow 파일·로그인 보안 개발 | B2B SaaS 보안 정책',
   description:
-    '협업툴 flow의 보안 체계 강화 프로젝트입니다. 파일 암호화, 접근 권한 관리, 다단계 인증 등을 통해 기업 데이터를 안전하게 보호하고 신뢰할 수 있는 협업 환경을 제공합니다.',
+    '협업툴 flow의 파일 보안 및 로그인 보안 시스템 개발 프로젝트입니다. PC와 모바일 환경별로 파일 다운로드 정책을 설정하고 IP 화이트리스트, 사용자 화이트리스트를 통한 접근 제어를 구현했습니다. 로그인 보안 정책 설정과 관리자 변경 이력, 파일 다운로드 이력 등 감사 로그를 통해 보안사고 대응 체계를 구축했습니다.',
   keywords: [
     'flow 보안',
     '파일 보안',
     '로그인 보안',
-    '암호화',
-    '협업툴',
+    'IP 화이트리스트',
+    '접근 제어',
+    '다운로드 정책',
+    '감사 로그',
+    'B2B SaaS',
     'Java',
-    '보안',
+    'PostgreSQL',
+    'Security Filter',
+    '정보 보안',
   ],
   path: '/project/flow-security',
 });

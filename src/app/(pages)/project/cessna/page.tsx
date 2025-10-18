@@ -1,3 +1,5 @@
+'use client';
+
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import ses1 from '@/assets/images/project/ses/ses1.webp';
@@ -7,11 +9,38 @@ import ses4 from '@/assets/images/project/ses/ses4.webp';
 import ses5 from '@/assets/images/project/ses/ses5.webp';
 import ses6 from '@/assets/images/project/ses/ses6.webp';
 import ses7 from '@/assets/images/project/ses/ses7.webp';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
-import { buttonVariants } from '@/components/ui/button';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
+import { useEffect, useRef, useState } from 'react';
 
 export default function KyungwoonCessnaMaintenanceSimPage() {
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  const images = [
+    { src: ses1, alt: '세스나 정비 훈련 시뮬레이션 장면 1' },
+    { src: ses2, alt: '세스나 정비 훈련 시뮬레이션 장면 2' },
+    { src: ses3, alt: '세스나 정비 훈련 시뮬레이션 장면 3' },
+    { src: ses4, alt: '세스나 정비 훈련 시뮬레이션 장면 4' },
+    { src: ses5, alt: '세스나 정비 훈련 시뮬레이션 장면 5' },
+    { src: ses6, alt: '세스나 정비 훈련 시뮬레이션 장면 6' },
+    { src: ses7, alt: '세스나 정비 훈련 시뮬레이션 장면 7' },
+  ];
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">경운대학교 세스나 경량항공기 정비 훈련 시뮬레이션</h1>
@@ -27,14 +56,34 @@ export default function KyungwoonCessnaMaintenanceSimPage() {
         <div className="w-full aspect-video">
           <iframe className="w-full h-full" src="https://www.youtube.com/embed/J5uD6_XIzyw?si=YeN-pNUKCgvaZCXJ&amp;controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
-        <div className="flex flex-col gap-4">
-          <Image src={ses1} alt="세스나 정비 훈련 시뮬레이션 장면 1" width={1200} height={675} />
-          <Image src={ses2} alt="세스나 정비 훈련 시뮬레이션 장면 2" width={1200} height={675} />
-          <Image src={ses3} alt="세스나 정비 훈련 시뮬레이션 장면 3" width={1200} height={675} />
-          <Image src={ses4} alt="세스나 정비 훈련 시뮬레이션 장면 4" width={1200} height={675} />
-          <Image src={ses5} alt="세스나 정비 훈련 시뮬레이션 장면 5" width={1200} height={675} />
-          <Image src={ses6} alt="세스나 정비 훈련 시뮬레이션 장면 6" width={1200} height={675} />
-          <Image src={ses7} alt="세스나 정비 훈련 시뮬레이션 장면 7" width={1200} height={675} />
+        <div className="space-y-2">
+          <Carousel
+            setApi={setApi}
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+          >
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+          <div className="text-center text-sm text-muted-foreground">
+            ({current} / {count})
+          </div>
         </div>
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>

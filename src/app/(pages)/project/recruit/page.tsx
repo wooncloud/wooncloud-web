@@ -29,10 +29,10 @@ export default function RecruitProjectPage() {
         </div>
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
-          <p className="text-muted-foreground">
-            채용 공고 작성부터 지원서 접수, 전형 결과 통보까지 전 과정을 관리할 수 있는 Spring 기반 채용 시스템을 2인 팀으로
-            개발했습니다. 공고·지원서 모듈과 공통 서비스, 화면 구조, 형상·DB 관리 등 전반을 맡으며 PM으로 프로젝트를 주도했습니다.
-          </p>
+          <div className="text-muted-foreground">
+            <p>채용 공고 작성부터 지원서 접수, 전형 결과 통보까지 전 과정을 관리할 수 있는 Spring 기반 채용 시스템을 2인 팀으로</p>
+            <p>개발했습니다. 공고·지원서 모듈과 공통 서비스, 화면 구조, 형상·DB 관리 등 전반을 맡으며 PM으로 프로젝트를 주도했습니다.</p>
+          </div>
         </div>
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">담당 역할</h3>
