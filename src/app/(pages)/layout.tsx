@@ -16,6 +16,14 @@ export default function PagesLayout({
   const lastSegment = pathname.split('/').filter(Boolean).pop() || '';
   const pageName = lastSegment.charAt(0).toUpperCase() + lastSegment.slice(1);
 
+  const handleBack = () => {
+    if (window.history.length > 1) {
+      router.back();
+    } else {
+      router.push('/');
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -23,7 +31,7 @@ export default function PagesLayout({
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => router.back()}
+            onClick={handleBack}
             aria-label="Back"
           >
             <ArrowLeft size={20} />
