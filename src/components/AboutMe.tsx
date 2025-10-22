@@ -8,7 +8,7 @@ export default function AboutMe() {
         <Image src={me1} alt="me1" className="w-full h-auto md:h-full md:object-cover md:object-left" />
       </div>
       <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
-        <p className="text-base font-semibold text-foreground">안녕하세요. 풀스택 웹 개발자 우성호입니다.</p>
+        <p className="text-base font-semibold text-foreground">안녕하세요. 프론트엔드 개발자 우성호입니다.</p>
         <div className="space-y-3">
           <p>
             <strong className="font-semibold text-foreground">사업적 시야와 사용자 중심 사고</strong>를 동시에 챙기며,
