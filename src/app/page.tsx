@@ -84,7 +84,7 @@ export default function Home() {
             <h3 className="text-lg font-bold">Certification</h3>
             <div className="space-y-3">
               <CertificationCard title="정보처리기사" date="2021.06.03" />
-              <CertificationCard title="SQLD" date="2021.06.03" />
+              <CertificationCard title="SQLD" date="2021.06.25" />
               <CertificationCard title="GTQ1급" description="GTQ그래픽기술자격 1급" date="2013.02.15" />
             </div>
           </article>
