@@ -28,9 +28,8 @@ export default function MadrasCheckExperiencePage() {
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">주요 업무</h3>
           <ul className="space-y-2 text-muted-foreground list-disc pl-6">
-            <li>플로우 SaaS 서비스의 신규 기능 기획·개발 및 기존 모듈 개선</li>
-            <li>웹·모바일 클라이언트와 백엔드 간 연동 구조 설계 및 API 품질 관리</li>
-            <li>운영 환경에서 발견되는 이슈 대응 및 서비스 성능·안정성 모니터링</li>
+            <li>플로우 SaaS 서비스의 신규 기능 개발 및 기존 모듈 개선</li>
+            <li>운영 환경에서 이슈 대응 및 서비스 성능·안정성 모니터링</li>
           </ul>
         </div>
         <div className="space-y-3">

@@ -18,7 +18,7 @@ export default function HangilCncExperiencePage() {
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">주요 업무</h3>
           <ul className="space-y-2 text-muted-foreground list-disc pl-6">
-            <li>텔레프레젠스 소셜 VR 프로젝트에서 내부 콘텐츠 및 인터랙션 UI 설계와 구현</li>
+            <li>텔레프레젠스 소셜 VR 프로젝트에서 내부 콘텐츠 개발 및 인터랙션 UI 설계와 구현</li>
             <li>블랙이글스 체험형 VR 시뮬레이션 구축, 어트랙션 하드웨어 연동 및 편대 편집 툴 개발</li>
             <li>경운대학교 세스나 경량항공기 정비 훈련 VR 시뮬레이션의 핵심 정비 절차 콘텐츠 제작</li>
           </ul>
