@@ -90,7 +90,7 @@ export const projects: Project[] = [
   },
   {
     id: 'erp',
-    title: '🏢 ERP 시스템 개발 (회사 내부 인트라넷)',
+    title: '🏢 사내 ERP 시스템 개발',
     period: '2019.05 - 2019.10',
     description: '인사·프로젝트·경력 관리 REST API 개발 및 Infragistics 기반 UI, 문서 출력 시스템 구축',
     tags: ['C#', 'ASP.NET WebForms', 'MS-SQL', 'javaScript', 'jQuery', 'Infragistics'],

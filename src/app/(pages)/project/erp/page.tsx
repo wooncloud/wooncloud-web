@@ -36,7 +36,7 @@ export default function ErpIntranetSystemPage() {
   ];
   return (
     <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">ERP 시스템 개발 (회사 내부 인트라넷)</h1>
+      <h1 className="text-3xl font-bold">사내 ERP 시스템 개발</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
           <Badge>C#</Badge>
