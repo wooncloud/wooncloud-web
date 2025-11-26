@@ -1,12 +1,24 @@
-# 운구름 웹사이트
+# wooncloud-web
 
-[wooncloud](https://wooncloud.com)
+풀스택 개발자 운구름의 개인 포트폴리오 웹사이트입니다.
 
-- 개발자 소개
-- 개발자 기술스택
-- 개발자 커리어
-  - 커리어
-  - 외주 및 과외
-  - ...
-- 개발자의 취미
-- 각종 내가 했던거.
+🔗 **[https://wooncloud.com](https://wooncloud.com)**
+
+## Tech Stack
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui (Radix UI)
+- **Database**: Supabase
+- **Icons**: Lucide React
+
+## Features
+
+- 프로필 및 소개
+- 기술 스택
+- 경력 사항 (Experience)
+- 프로젝트 포트폴리오
+- 자격증 및 학력
+- 토이 프로젝트 목록
+- 연락처 페이지
