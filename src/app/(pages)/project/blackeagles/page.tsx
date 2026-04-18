@@ -1,7 +1,5 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
+import ImageCarousel from "@/components/ImageCarousel";
 import be1 from "@/assets/images/project/be/be1.webp";
 import be2 from "@/assets/images/project/be/be2.webp";
 import be3 from "@/assets/images/project/be/be3.webp";
@@ -9,45 +7,35 @@ import be4 from "@/assets/images/project/be/be4.webp";
 import be5 from "@/assets/images/project/be/be5.webp";
 import be6 from "@/assets/images/project/be/be6.webp";
 import be7 from "@/assets/images/project/be/be7.webp";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useRef, useState } from "react";
+import { generatePageMetadata } from "@/lib/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "블랙이글스 VR 시뮬레이션 프로젝트",
+  description:
+    "Unity 기반 블랙이글스 어트랙션 체험 VR 시뮬레이션 프로젝트입니다. Sym4d 하드웨어를 연동하여 현실감 있는 비행 체험을 구현했습니다.",
+  keywords: [
+    "블랙이글스",
+    "VR",
+    "Unity",
+    "시뮬레이션",
+    "Sym4d",
+    "어트랙션",
+    "프로젝트",
+  ],
+  path: "/project/blackeagles",
+});
+
+const images = [
+  { src: be1, alt: "블랙이글스 VR 시뮬레이션 화면 1" },
+  { src: be2, alt: "블랙이글스 VR 시뮬레이션 화면 2" },
+  { src: be3, alt: "블랙이글스 VR 시뮬레이션 화면 3" },
+  { src: be4, alt: "블랙이글스 VR 시뮬레이션 화면 4" },
+  { src: be5, alt: "블랙이글스 VR 시뮬레이션 화면 5" },
+  { src: be6, alt: "블랙이글스 VR 시뮬레이션 화면 6" },
+  { src: be7, alt: "블랙이글스 VR 시뮬레이션 화면 7" },
+];
 
 export default function BlackEaglesVRSimulationPage() {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
-  const images = [
-    { src: be1, alt: "블랙이글스 VR 시뮬레이션 화면 1" },
-    { src: be2, alt: "블랙이글스 VR 시뮬레이션 화면 2" },
-    { src: be3, alt: "블랙이글스 VR 시뮬레이션 화면 3" },
-    { src: be4, alt: "블랙이글스 VR 시뮬레이션 화면 4" },
-    { src: be5, alt: "블랙이글스 VR 시뮬레이션 화면 5" },
-    { src: be6, alt: "블랙이글스 VR 시뮬레이션 화면 6" },
-    { src: be7, alt: "블랙이글스 VR 시뮬레이션 화면 7" },
-  ];
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">
@@ -74,35 +62,7 @@ export default function BlackEaglesVRSimulationPage() {
             allowFullScreen
           ></iframe>
         </div>
-        <div className="space-y-2">
-          <Carousel
-            setApi={setApi}
-            plugins={[plugin.current]}
-            className="w-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          >
-            <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-          <div className="text-center text-sm text-muted-foreground">
-            ({current} / {count})
-          </div>
-        </div>
+        <ImageCarousel images={images} />
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <p className="text-muted-foreground">

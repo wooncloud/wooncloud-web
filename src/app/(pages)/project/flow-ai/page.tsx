@@ -1,43 +1,38 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
+import ImageCarousel from "@/components/ImageCarousel";
 import flowAi1 from "@/assets/images/project/flow/ai1.webp";
 import flowAi2 from "@/assets/images/project/flow/ai2.webp";
-import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useRef, useState } from "react";
+import { generatePageMetadata } from "@/lib/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "flow AI/LLM 서버 개발 | OpenAI Function Calling & Node.js",
+  description:
+    "OpenAI GPT-4 기반 협업 지능화 시스템입니다. Function Calling과 Few-shot Prompting으로 업무 검색 및 프로젝트 템플릿 자동 생성을 구현했습니다. Node.js + Express로 독립적인 LLM 서버를 구축하고 Java 백엔드와 연동하여 실시간 AI 응답을 제공합니다. PostgreSQL 기반 사용자 인터랙션 로그 분석으로 AI 품질을 지속적으로 개선하고 있습니다.",
+  keywords: [
+    "flow AI",
+    "OpenAI GPT-4",
+    "Function Calling",
+    "Few-shot Prompting",
+    "LLM 서버",
+    "Node.js",
+    "Express",
+    "AI 업무 검색",
+    "템플릿 생성",
+    "Java 연동",
+    "PostgreSQL",
+    "AI 로그 분석",
+    "협업 AI",
+    "SaaS AI",
+  ],
+  path: "/project/flow-ai",
+});
+
+const images = [
+  { src: flowAi1, alt: "flowAi1" },
+  { src: flowAi2, alt: "flowAi2" },
+];
 
 export default function FlowAiProjectPage() {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
-  const images = [
-    { src: flowAi1, alt: "flowAi1" },
-    { src: flowAi2, alt: "flowAi2" },
-  ];
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">플로우 AI / LLM 서버 개발</h1>
@@ -58,35 +53,7 @@ export default function FlowAiProjectPage() {
             마드라스체크(주) · SaaS 개발부
           </p>
         </div>
-        <div className="space-y-2">
-          <Carousel
-            setApi={setApi}
-            plugins={[plugin.current]}
-            className="w-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          >
-            <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-          <div className="text-center text-sm text-muted-foreground">
-            ({current} / {count})
-          </div>
-        </div>
+        <ImageCarousel images={images} />
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 배경</h3>
           <div className="text-muted-foreground space-y-3">

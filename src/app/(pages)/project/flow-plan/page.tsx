@@ -1,43 +1,36 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
+import ImageCarousel from "@/components/ImageCarousel";
 import flowPlan1 from "@/assets/images/project/flow/plan1.webp";
 import flowPlan2 from "@/assets/images/project/flow/plan2.webp";
-import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useRef, useState } from "react";
+import { generatePageMetadata } from "@/lib/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "flow 플랜 관리 시스템 개발 | SaaS 구독 및 과금 정책",
+  description:
+    "유연한 SaaS 비즈니스 모델을 지원하는 플랜 관리 시스템입니다. 기존 단일 플랜 구조의 한계를 극복하고 다양한 요금제를 생성할 수 있는 시스템을 구축했습니다. 플랜별 기능 제한, 사용자 권한 매칭, 구독 관리, 자동 결제, 플랜 변경 이력 추적 기능을 통해 고객 맞춤형 서비스를 제공하고 유연한 정책 변경이 가능합니다.",
+  keywords: [
+    "flow 플랜",
+    "SaaS 요금제",
+    "구독 관리",
+    "과금 정책",
+    "플랜 매칭",
+    "기능 제한",
+    "자동 결제",
+    "Java",
+    "PostgreSQL",
+    "사용자 권한",
+    "정책 변경",
+    "구독 모델",
+  ],
+  path: "/project/flow-plan",
+});
+
+const images = [
+  { src: flowPlan1, alt: "flowPlan1" },
+  { src: flowPlan2, alt: "flowPlan2" },
+];
 
 export default function FlowPlanProjectPage() {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
-  const images = [
-    { src: flowPlan1, alt: "flowPlan1" },
-    { src: flowPlan2, alt: "flowPlan2" },
-  ];
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">플랜</h1>
@@ -55,35 +48,7 @@ export default function FlowPlanProjectPage() {
             마드라스체크(주) · SaaS 개발부
           </p>
         </div>
-        <div className="space-y-2">
-          <Carousel
-            setApi={setApi}
-            plugins={[plugin.current]}
-            className="w-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          >
-            <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-          <div className="text-center text-sm text-muted-foreground">
-            ({current} / {count})
-          </div>
-        </div>
+        <ImageCarousel images={images} />
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 배경</h3>
           <div className="text-muted-foreground space-y-3">

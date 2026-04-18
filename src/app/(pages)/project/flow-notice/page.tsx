@@ -1,43 +1,35 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
+import ImageCarousel from "@/components/ImageCarousel";
 import flowNotice1 from "@/assets/images/project/flow/notice1.webp";
 import flowNotice2 from "@/assets/images/project/flow/notice2.webp";
-import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useRef, useState } from "react";
+import { generatePageMetadata } from "@/lib/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "flow 공지·배너 관리 시스템 | 타겟팅 & 다국어 지원",
+  description:
+    "글로벌 SaaS를 위한 정교한 공지사항 및 배너 관리 시스템입니다. 환경, 플랜, 기업, 사용자 유형별 타겟팅과 국가별 다국어 콘텐츠 지원으로 맞춤형 정보 전달이 가능합니다. 타임존 기반 예약 게시 기능으로 각국 사용자에게 최적의 시간에 공지를 노출하여 중요한 업데이트와 이벤트를 효율적으로 전달합니다.",
+  keywords: [
+    "flow 공지",
+    "배너 관리",
+    "타겟팅",
+    "다국어 지원",
+    "타임존",
+    "예약 게시",
+    "Java",
+    "PostgreSQL",
+    "공지사항 시스템",
+    "SaaS 마케팅",
+    "사용자 세분화",
+  ],
+  path: "/project/flow-notice",
+});
+
+const images = [
+  { src: flowNotice1, alt: "flowNotice1" },
+  { src: flowNotice2, alt: "flowNotice2" },
+];
 
 export default function FlowNoticeProjectPage() {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
-  const images = [
-    { src: flowNotice1, alt: "flowNotice1" },
-    { src: flowNotice2, alt: "flowNotice2" },
-  ];
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">공지, 배너</h1>
@@ -55,35 +47,7 @@ export default function FlowNoticeProjectPage() {
             마드라스체크(주) · SaaS 개발부
           </p>
         </div>
-        <div className="space-y-2">
-          <Carousel
-            setApi={setApi}
-            plugins={[plugin.current]}
-            className="w-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          >
-            <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-          <div className="text-center text-sm text-muted-foreground">
-            ({current} / {count})
-          </div>
-        </div>
+        <ImageCarousel images={images} />
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 배경</h3>
           <div className="text-muted-foreground space-y-3">

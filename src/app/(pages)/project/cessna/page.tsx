@@ -1,7 +1,5 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
+import ImageCarousel from "@/components/ImageCarousel";
 import ses1 from "@/assets/images/project/ses/ses1.webp";
 import ses2 from "@/assets/images/project/ses/ses2.webp";
 import ses3 from "@/assets/images/project/ses/ses3.webp";
@@ -9,45 +7,35 @@ import ses4 from "@/assets/images/project/ses/ses4.webp";
 import ses5 from "@/assets/images/project/ses/ses5.webp";
 import ses6 from "@/assets/images/project/ses/ses6.webp";
 import ses7 from "@/assets/images/project/ses/ses7.webp";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useRef, useState } from "react";
+import { generatePageMetadata } from "@/lib/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "세스나 정비 훈련 시뮬레이션 프로젝트",
+  description:
+    "Unity 기반 경운대학교 세스나 경량항공기 정비 훈련 시뮬레이션 프로젝트입니다. 실제 정비 절차를 VR 환경으로 전환하여 학습 효율을 높였습니다.",
+  keywords: [
+    "세스나",
+    "VR",
+    "Unity",
+    "시뮬레이션",
+    "정비 훈련",
+    "경운대학교",
+    "프로젝트",
+  ],
+  path: "/project/cessna",
+});
+
+const images = [
+  { src: ses1, alt: "세스나 정비 훈련 시뮬레이션 장면 1" },
+  { src: ses2, alt: "세스나 정비 훈련 시뮬레이션 장면 2" },
+  { src: ses3, alt: "세스나 정비 훈련 시뮬레이션 장면 3" },
+  { src: ses4, alt: "세스나 정비 훈련 시뮬레이션 장면 4" },
+  { src: ses5, alt: "세스나 정비 훈련 시뮬레이션 장면 5" },
+  { src: ses6, alt: "세스나 정비 훈련 시뮬레이션 장면 6" },
+  { src: ses7, alt: "세스나 정비 훈련 시뮬레이션 장면 7" },
+];
 
 export default function KyungwoonCessnaMaintenanceSimPage() {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
-  const images = [
-    { src: ses1, alt: "세스나 정비 훈련 시뮬레이션 장면 1" },
-    { src: ses2, alt: "세스나 정비 훈련 시뮬레이션 장면 2" },
-    { src: ses3, alt: "세스나 정비 훈련 시뮬레이션 장면 3" },
-    { src: ses4, alt: "세스나 정비 훈련 시뮬레이션 장면 4" },
-    { src: ses5, alt: "세스나 정비 훈련 시뮬레이션 장면 5" },
-    { src: ses6, alt: "세스나 정비 훈련 시뮬레이션 장면 6" },
-    { src: ses7, alt: "세스나 정비 훈련 시뮬레이션 장면 7" },
-  ];
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">
@@ -73,35 +61,7 @@ export default function KyungwoonCessnaMaintenanceSimPage() {
             allowFullScreen
           ></iframe>
         </div>
-        <div className="space-y-2">
-          <Carousel
-            setApi={setApi}
-            plugins={[plugin.current]}
-            className="w-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          >
-            <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-          <div className="text-center text-sm text-muted-foreground">
-            ({current} / {count})
-          </div>
-        </div>
+        <ImageCarousel images={images} />
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <p className="text-muted-foreground">

@@ -1,51 +1,31 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
+import ImageCarousel from "@/components/ImageCarousel";
 import tele1 from "@/assets/images/project/tele/tele1.webp";
 import tele2 from "@/assets/images/project/tele/tele2.webp";
 import tele3 from "@/assets/images/project/tele/tele3.webp";
 import tele4 from "@/assets/images/project/tele/tele4.webp";
 import tele5 from "@/assets/images/project/tele/tele5.webp";
 import tele6 from "@/assets/images/project/tele/tele6.webp";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useRef, useState } from "react";
+import { generatePageMetadata } from "@/lib/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "텔레프레젠스 소셜 VR 프로젝트",
+  description:
+    "Unity 기반 텔레프레젠스 소셜 VR 프로젝트입니다. 국가과제형 프로젝트에 참여하여 내부 콘텐츠와 인터랙션 UI를 구축하며 핵심 사용자 경험을 설계했습니다.",
+  keywords: ["텔레프레젠스", "VR", "Unity", "소셜 VR", "VIVE", "프로젝트"],
+  path: "/project/telepresence",
+});
+
+const images = [
+  { src: tele1, alt: "텔레프레젠스 소셜 VR 시연 화면 1" },
+  { src: tele2, alt: "텔레프레젠스 소셜 VR 시연 화면 2" },
+  { src: tele3, alt: "텔레프레젠스 소셜 VR 시연 화면 3" },
+  { src: tele4, alt: "텔레프레젠스 소셜 VR 시연 화면 4" },
+  { src: tele5, alt: "텔레프레젠스 소셜 VR 시연 화면 5" },
+  { src: tele6, alt: "텔레프레젠스 소셜 VR 시연 화면 6" },
+];
 
 export default function TelepresenceSocialVRPage() {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
-  const images = [
-    { src: tele1, alt: "텔레프레젠스 소셜 VR 시연 화면 1" },
-    { src: tele2, alt: "텔레프레젠스 소셜 VR 시연 화면 2" },
-    { src: tele3, alt: "텔레프레젠스 소셜 VR 시연 화면 3" },
-    { src: tele4, alt: "텔레프레젠스 소셜 VR 시연 화면 4" },
-    { src: tele5, alt: "텔레프레젠스 소셜 VR 시연 화면 5" },
-    { src: tele6, alt: "텔레프레젠스 소셜 VR 시연 화면 6" },
-  ];
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">텔레프레젠스 소셜 VR</h1>
@@ -58,35 +38,7 @@ export default function TelepresenceSocialVRPage() {
           <Badge>VIVE VR</Badge>
         </div>
         <p className="text-muted-foreground">2017.11 - 2018.12 (1년 2개월)</p>
-        <div className="space-y-2">
-          <Carousel
-            setApi={setApi}
-            plugins={[plugin.current]}
-            className="w-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          >
-            <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-          <div className="text-center text-sm text-muted-foreground">
-            ({current} / {count})
-          </div>
-        </div>
+        <ImageCarousel images={images} />
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <p className="text-muted-foreground">

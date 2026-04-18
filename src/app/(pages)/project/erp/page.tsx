@@ -1,46 +1,34 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
-import itmERP1 from "@/assets/images/project/erp/itmerp1.webp";
-import itmERP2 from "@/assets/images/project/erp/itmerp2.webp";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useRef, useState } from "react";
+import ImageCarousel from "@/components/ImageCarousel";
+import itmERP1 from "@/assets/images/project/erp/itmerp1.webp";
+import itmERP2 from "@/assets/images/project/erp/itmerp2.webp";
+import { generatePageMetadata } from "@/lib/metadata";
+
+export const metadata = generatePageMetadata({
+  title: "ERP 시스템 프로젝트",
+  description:
+    "ASP.NET 기반 회사 내부 ERP 인트라넷 시스템 개발 프로젝트입니다. 인사, 프로젝트, 경력 관리를 통합하는 시스템을 구축했습니다.",
+  keywords: [
+    "ERP",
+    "인트라넷",
+    "ASP.NET",
+    "C#",
+    "MS-SQL",
+    "프로젝트",
+    "인사관리",
+  ],
+  path: "/project/erp",
+});
+
+const images = [
+  { src: itmERP1, alt: "itmERP1" },
+  { src: itmERP2, alt: "itmERP2" },
+];
 
 export default function ErpIntranetSystemPage() {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
-  const images = [
-    { src: itmERP1, alt: "itmERP1" },
-    { src: itmERP2, alt: "itmERP2" },
-  ];
   return (
     <div className="py-6 space-y-6">
       <h1 className="text-3xl font-bold">사내 ERP 시스템 개발</h1>
@@ -55,35 +43,7 @@ export default function ErpIntranetSystemPage() {
           <Badge variant="outline">Infragistics</Badge>
         </div>
         <p className="text-muted-foreground">2019.05 - 2019.10</p>
-        <div className="space-y-2">
-          <Carousel
-            setApi={setApi}
-            plugins={[plugin.current]}
-            className="w-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          >
-            <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-          <div className="text-center text-sm text-muted-foreground">
-            ({current} / {count})
-          </div>
-        </div>
+        <ImageCarousel images={images} />
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <p className="text-muted-foreground">

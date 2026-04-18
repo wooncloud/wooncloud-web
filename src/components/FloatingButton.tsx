@@ -4,14 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ListTree, ArrowUp } from "lucide-react";
-
-const sections = [
-  { id: "about-me", label: "About Me" },
-  { id: "skill-stack", label: "Skill Stack" },
-  { id: "experience", label: "Experience" },
-  { id: "project", label: "Project" },
-  { id: "activities", label: "Activities" },
-];
+import { navSections } from "@/lib/data/navigation";
 
 export default function FloatingButton() {
   const [open, setOpen] = useState(false);
@@ -40,14 +33,14 @@ export default function FloatingButton() {
           <SheetContent>
             <nav className="mt-6">
               <ul className="space-y-2">
-                {sections.map((section) => (
+                {navSections.map((section) => (
                   <li key={section.id}>
                     <Button
                       variant="ghost"
                       className="w-full justify-start text-left"
                       onClick={() => scrollToSection(section.id)}
                     >
-                      <h1 className="text-xl font-bold">{section.label}</h1>
+                      <span className="text-xl font-bold">{section.label}</span>
                     </Button>
                   </li>
                 ))}
