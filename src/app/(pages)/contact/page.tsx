@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { useState } from 'react';
-import { getSupabaseClient } from '@/lib/supabase/client';
-import { sendDiscordNotification } from '@/lib/discord';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { getSupabaseClient } from "@/lib/supabase/client";
+import { sendDiscordNotification } from "@/lib/discord";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    title: '',
-    email: '',
-    content: '',
+    title: "",
+    email: "",
+    content: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{
-    type: 'success' | 'error';
+    type: "success" | "error";
     message: string;
   } | null>(null);
 
@@ -30,8 +30,8 @@ export default function ContactPage() {
 
     if (!title || !email || !content) {
       setFeedback({
-        type: 'error',
-        message: '모든 필드를 입력해주세요.',
+        type: "error",
+        message: "모든 필드를 입력해주세요.",
       });
       return;
     }
@@ -41,7 +41,7 @@ export default function ContactPage() {
 
     try {
       const supabase = getSupabaseClient();
-      const { error } = await supabase.from('woon_home_contact').insert({
+      const { error } = await supabase.from("woon_home_contact").insert({
         title,
         email,
         content,
@@ -59,19 +59,19 @@ export default function ContactPage() {
       });
 
       setFeedback({
-        type: 'success',
-        message: '문의가 전송되었습니다. 빠르게 답변드릴게요!',
+        type: "success",
+        message: "문의가 전송되었습니다. 빠르게 답변드릴게요!",
       });
       setFormData({
-        title: '',
-        email: '',
-        content: '',
+        title: "",
+        email: "",
+        content: "",
       });
     } catch (error) {
-      console.error('Failed to submit contact form:', error);
+      console.error("Failed to submit contact form:", error);
       setFeedback({
-        type: 'error',
-        message: '전송에 실패했습니다. 잠시 후 다시 시도해주세요.',
+        type: "error",
+        message: "전송에 실패했습니다. 잠시 후 다시 시도해주세요.",
       });
     } finally {
       setIsSubmitting(false);
@@ -83,7 +83,8 @@ export default function ContactPage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold">Contact</h1>
         <p className="text-muted-foreground">
-          문의 메시지는 Discord 웹훅을 통해 실시간으로 전달되어 빠른 확인과 답변이 가능합니다.
+          문의 메시지는 Discord 웹훅을 통해 실시간으로 전달되어 빠른 확인과
+          답변이 가능합니다.
         </p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -94,7 +95,9 @@ export default function ContactPage() {
             type="text"
             placeholder="이름을 입력하세요"
             value={formData.title}
-            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, title: e.target.value })
+            }
             required
           />
         </div>
@@ -132,12 +135,12 @@ export default function ContactPage() {
           disabled={isSubmitting}
           className="w-full transition-all duration-200 hover:scale-[1.02] hover:shadow-md active:scale-[0.98]"
         >
-          {isSubmitting ? '전송 중…' : '전송하기'}
+          {isSubmitting ? "전송 중…" : "전송하기"}
         </Button>
         {feedback && (
           <p
             className={`text-sm ${
-              feedback.type === 'error' ? 'text-red-500' : 'text-green-600'
+              feedback.type === "error" ? "text-red-500" : "text-green-600"
             }`}
             aria-live="polite"
           >

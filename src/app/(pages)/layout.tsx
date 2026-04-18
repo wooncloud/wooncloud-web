@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
-import { useRouter, usePathname } from 'next/navigation';
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function PagesLayout({
   children,
@@ -13,14 +13,14 @@ export default function PagesLayout({
   const pathname = usePathname();
 
   // Extract page name from pathname
-  const lastSegment = pathname.split('/').filter(Boolean).pop() || '';
+  const lastSegment = pathname.split("/").filter(Boolean).pop() || "";
   const pageName = lastSegment.charAt(0).toUpperCase() + lastSegment.slice(1);
 
   const handleBack = () => {
     if (window.history.length > 1) {
       router.back();
     } else {
-      router.push('/');
+      router.push("/");
     }
   };
 

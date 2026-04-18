@@ -1,6 +1,6 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
-const SITE_URL = 'https://wooncloud.com';
+const SITE_URL = "https://wooncloud.com";
 
 interface PageMetadata {
   title: string;
@@ -25,12 +25,12 @@ export function generatePageMetadata({
       canonical: path,
     },
     openGraph: {
-      type: 'website',
+      type: "website",
       url,
       title,
       description,
-      siteName: '운구름 | wooncloud',
-      locale: 'ko_KR',
+      siteName: "운구름 | wooncloud",
+      locale: "ko_KR",
       images: [
         {
           url: `${SITE_URL}/og-image.png`,
@@ -41,7 +41,7 @@ export function generatePageMetadata({
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
       images: [`${SITE_URL}/og-image.png`],

@@ -1,13 +1,19 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { Toaster } from '@/components/ui/sonner';
-import { toast } from 'sonner';
-import type { ExternalToast } from 'sonner';
+import { useEffect } from "react";
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
+import type { ExternalToast } from "sonner";
 
 interface NoticeProps {
   message: string;
-  position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center';
+  position?:
+    | "top-left"
+    | "top-right"
+    | "bottom-left"
+    | "bottom-right"
+    | "top-center"
+    | "bottom-center";
   icon?: React.ReactNode;
   duration?: number;
   description?: string;
@@ -19,7 +25,7 @@ interface NoticeProps {
 
 export default function Notice({
   message,
-  position = 'top-center',
+  position = "top-center",
   icon,
   duration = 4000,
   description,
@@ -30,10 +36,12 @@ export default function Notice({
       duration,
       icon,
       description,
-      action: action ? {
-        label: action.label,
-        onClick: action.onClick,
-      } : undefined,
+      action: action
+        ? {
+            label: action.label,
+            onClick: action.onClick,
+          }
+        : undefined,
     };
 
     toast(message, options);

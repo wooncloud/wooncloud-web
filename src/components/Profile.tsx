@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import logo from '@/assets/images/logo.webp';
+import Link from "next/link";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import logo from "@/assets/images/logo.webp";
 
 export default function Header() {
   return (

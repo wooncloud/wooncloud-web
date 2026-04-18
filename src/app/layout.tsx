@@ -18,8 +18,8 @@ const structuredData = {
   worksFor: [
     {
       "@type": "Organization",
-      name: "마드라스체크(주)"
-    }
+      name: "마드라스체크(주)",
+    },
   ],
   knowsAbout: [
     "SaaS",
@@ -30,17 +30,17 @@ const structuredData = {
     "Next.js",
     "Node.js",
     "Java",
-    "Spring"
+    "Spring",
   ],
   knowsLanguage: ["ko", "en"],
-  description: SEO_DESCRIPTION
+  description: SEO_DESCRIPTION,
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SEO_TITLE,
-    template: "%s | wooncloud"
+    template: "%s | wooncloud",
   },
   description: SEO_DESCRIPTION,
   keywords: [
@@ -60,11 +60,9 @@ export const metadata: Metadata = {
     "Spring",
     "웹 서버 개발",
     "경력 소개",
-    "프로젝트"
+    "프로젝트",
   ],
-  authors: [
-    { name: "운구름", url: SITE_URL }
-  ],
+  authors: [{ name: "운구름", url: SITE_URL }],
   creator: "운구름",
   publisher: "운구름",
   robots: {
@@ -75,11 +73,11 @@ export const metadata: Metadata = {
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
-      "max-video-preview": -1
-    }
+      "max-video-preview": -1,
+    },
   },
   alternates: {
-    canonical: "/"
+    canonical: "/",
   },
   openGraph: {
     type: "website",
@@ -94,16 +92,16 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: SEO_TITLE,
-      }
-    ]
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: SEO_TITLE,
     description: SEO_DESCRIPTION,
-    images: [`${SITE_URL}/og-image.png`]
+    images: [`${SITE_URL}/og-image.png`],
   },
-  category: "technology"
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -121,7 +119,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData)
+            __html: JSON.stringify(structuredData),
           }}
         />
 
@@ -134,9 +132,7 @@ export default function RootLayout({
       </head>
       <body>
         <div className="flex flex-col min-h-screen w-full max-w-[700px] mx-auto">
-          <main>
-            {children}
-          </main>
+          <main>{children}</main>
         </div>
 
         {/* Google Analytics */}
