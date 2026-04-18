@@ -1,132 +1,350 @@
+export type SkillCategory =
+  | "Languages"
+  | "Frontend"
+  | "Backend"
+  | "DevOps & Tools";
+
+export type SkillType = "lang" | "fw" | "etc";
+export type SkillPriority = "high" | "medium" | "low";
+
+export const skillCategories: SkillCategory[] = [
+  "Languages",
+  "Frontend",
+  "Backend",
+  "DevOps & Tools",
+];
+
+const priorityOrder: Record<SkillPriority, number> = {
+  high: 0,
+  medium: 1,
+  low: 2,
+};
+
+const typeOrder: Record<SkillType, number> = {
+  lang: 0,
+  fw: 1,
+  etc: 2,
+};
+
 export interface Skill {
   id: string;
   name: string;
   imageUrl: string;
-  description: string;
-  priority: "high" | "medium" | "low";
+  priority: SkillPriority;
+  category: SkillCategory;
+  type: SkillType;
+  color: string;
 }
 
-export const skills: Skill[] = [
+const raw: Skill[] = [
+  // Languages
   {
     id: "javascript",
     name: "JavaScript",
     imageUrl: "/skills/js.svg",
-    description:
-      "가장 주로 사용하고 있으며 프론트엔드와 백엔드 모두에서 활용하고 있습니다. 레거시 프로젝트에서 주로 사용하고 있으며, ES6+ 문법을 활용한 모던 JavaScript 개발에 익숙합니다.",
     priority: "high",
+    category: "Languages",
+    type: "lang",
+    color: "#F7DF1E",
   },
   {
     id: "typescript",
     name: "TypeScript",
     imageUrl: "/skills/ts.svg",
-    description:
-      "주로 사용하고 있는 언어로서 React, Preact, Next.js 프로젝트에서 주로 사용하고 있습니다. 레거시 프로젝트 외 꼭 타입스크립트를 사용하고 있으며, 많은 레거시 프로젝트에 타입스크립트로 마이그레이션하고 있습니다.",
     priority: "high",
-  },
-
-  {
-    id: "react",
-    name: "React",
-    imageUrl: "/skills/react.svg",
-    description:
-      "Next.js를 활용한 프론트엔드 개발에 주로 사용하고 있는 프레임워크입니다.",
-    priority: "high",
-  },
-  {
-    id: "zustand",
-    name: "Zustand",
-    imageUrl: "/skills/zustand.webp",
-    description: "현재 주로 사용하고 있는 리액트 상태 관리 라이브러리 입니다.",
-    priority: "high",
-  },
-  {
-    id: "nextjs",
-    name: "Next.js",
-    imageUrl: "/skills/nextjs.svg",
-    description:
-      "SSR, SSG가 필요한 프로젝트에서 현재 주로 사용하고 있으며, 경력에서 사용한 경험은 없지만 많은 개인 프로젝트에서 사용하고 있습니다. SEO 개선 경험이 있습니다.",
-    priority: "high",
-  },
-  {
-    id: "nodejs",
-    name: "Node.js",
-    imageUrl: "/skills/nodejs.svg",
-    description:
-      "Express를 활용한 백엔드 API 개발 경험이 있습니다. 현재 마드라스체크에서 flow LLM 서버와 소켓서버, 배치서버 등 다양하게 사용하고 있으며, RESTful API 설계와 구현에 익숙합니다.",
-    priority: "medium",
-  },
-  {
-    id: "nestjs",
-    name: "NestJS",
-    imageUrl: "/skills/nestjs.svg",
-    description:
-      "Node.js 기반의 백엔드 프레임워크로, 모듈 기반 아키텍처와 TypeScript를 활용한 서버 개발에 사용하고 있습니다.",
-    priority: "high",
-  },
-  {
-    id: "preact",
-    name: "Preact",
-    imageUrl: "/skills/preact.svg",
-    description:
-      "마드라스체크에서 주로 사용하고 있는 react 기반의 경량 프론트엔드 프레임워크이며, 이 프레임워크로 플로우의 업무, 간트차트 등 많은 프론트엔드 부분을 개발하고 있습니다.",
-    priority: "medium",
-  },
-  {
-    id: "svelte",
-    name: "Svelte & SvelteKit",
-    imageUrl: "/skills/svelte.svg",
-    description:
-      "SvelteKit을 활용한 풀스택 개발 경험이 있으며, 많은 토이프로젝트에서 사용하고 있습니다.",
-    priority: "medium",
+    category: "Languages",
+    type: "lang",
+    color: "#3178C6",
   },
   {
     id: "java",
     name: "Java",
     imageUrl: "/skills/java.svg",
-    description: `
-      마드라스체크에서 플로우 백엔드 개발에 주로 사용하며, 사내 독자적인 프레임워크인 jex Framework와 함께 사용하고 있습니다.
-      그리고 Spring Framework와 Spring Boot를 활용한 백엔드 개발 경험이 있습니다.
-    `,
     priority: "high",
+    category: "Languages",
+    type: "lang",
+    color: "#007396",
   },
   {
-    id: "spring",
-    name: "Spring",
-    imageUrl: "/skills/spring.svg",
-    description:
-      "Spring Framework 및 Spring Boot를 활용한 백엔드 개발 경험이 있습니다.",
+    id: "html5",
+    name: "HTML5",
+    imageUrl: "/skills/html5.svg",
     priority: "medium",
+    category: "Languages",
+    type: "lang",
+    color: "#E34F26",
   },
   {
-    id: "postgresql",
-    name: "PostgreSQL",
-    imageUrl: "/skills/postgresql.svg",
-    description:
-      "현재 주로 사용하고 있는 관계형 데이터베이스이며 RDB 설계 및 최적화 경험이 있습니다. 복잡한 쿼리 작성과 인덱싱을 통한 성능 개선에 능숙합니다.",
+    id: "css3",
+    name: "CSS3",
+    imageUrl: "/skills/css.svg",
+    priority: "medium",
+    category: "Languages",
+    type: "lang",
+    color: "#1572B6",
+  },
+
+  // Frontend
+  {
+    id: "react",
+    name: "React",
+    imageUrl: "/skills/react.svg",
     priority: "high",
+    category: "Frontend",
+    type: "fw",
+    color: "#61DAFB",
   },
   {
-    id: "csharp",
-    name: "C#",
-    imageUrl: "/skills/csharp.svg",
-    description:
-      ".NET 프레임워크를 활용한 애플리케이션 개발 경험이 있습니다. 아이티엠건축사사무소에서 ASP.NET을 활용한 웹 서버 개발에 사용과, 한길씨앤씨에서 유니티 개발에 사용한 경험이 있습니다.",
-    priority: "low",
+    id: "nextjs",
+    name: "Next.js",
+    imageUrl: "/skills/nextjs.svg",
+    priority: "high",
+    category: "Frontend",
+    type: "fw",
+    color: "#000000",
   },
   {
-    id: "aspnet",
-    name: "ASP.NET",
-    imageUrl: "/skills/aspnet.webp",
-    description:
-      "ASP.NET Core를 활용한 웹 API 및 웹 애플리케이션 개발 경험이 있습니다. 아이티엠건축사사무소에서 ASP.NET을 활용한 웹 서버 개발 경험이 있습니다.",
-    priority: "low",
+    id: "tailwind",
+    name: "Tailwind CSS",
+    imageUrl: "/skills/tailwindcss.svg",
+    priority: "high",
+    category: "Frontend",
+    type: "etc",
+    color: "#06B6D4",
+  },
+  {
+    id: "zustand",
+    name: "Zustand",
+    imageUrl: "/skills/redux.svg",
+    priority: "high",
+    category: "Frontend",
+    type: "etc",
+    color: "#764ABC",
+  },
+  {
+    id: "react-query",
+    name: "React Query",
+    imageUrl: "/skills/reactquery.svg",
+    priority: "high",
+    category: "Frontend",
+    type: "etc",
+    color: "#FF4154",
+  },
+  {
+    id: "preact",
+    name: "Preact",
+    imageUrl: "/skills/preact.svg",
+    priority: "medium",
+    category: "Frontend",
+    type: "fw",
+    color: "#673AB8",
+  },
+  {
+    id: "svelte",
+    name: "Svelte",
+    imageUrl: "/skills/svelte.svg",
+    priority: "medium",
+    category: "Frontend",
+    type: "fw",
+    color: "#FF3E00",
+  },
+  {
+    id: "sveltekit",
+    name: "SvelteKit",
+    imageUrl: "/skills/svelte.svg",
+    priority: "medium",
+    category: "Frontend",
+    type: "fw",
+    color: "#FF3E00",
   },
   {
     id: "jquery",
     name: "jQuery",
     imageUrl: "/skills/jquery.svg",
-    description:
-      "마드라스체크의 플로우와 아이티엠건축사사무소에서 레거시 프로젝트 유지보수에 사용하고 있습니다.",
     priority: "medium",
+    category: "Frontend",
+    type: "etc",
+    color: "#0769AD",
+  },
+  {
+    id: "bootstrap",
+    name: "Bootstrap",
+    imageUrl: "/skills/bootstrap.svg",
+    priority: "low",
+    category: "Frontend",
+    type: "etc",
+    color: "#7952B3",
+  },
+
+  // Backend
+  {
+    id: "nestjs",
+    name: "NestJS",
+    imageUrl: "/skills/nestjs.svg",
+    priority: "high",
+    category: "Backend",
+    type: "fw",
+    color: "#E0234E",
+  },
+  {
+    id: "nodejs",
+    name: "Node.js",
+    imageUrl: "/skills/nodejs.svg",
+    priority: "high",
+    category: "Backend",
+    type: "etc",
+    color: "#339933",
+  },
+  {
+    id: "postgresql",
+    name: "PostgreSQL",
+    imageUrl: "/skills/postgresql.svg",
+    priority: "high",
+    category: "Backend",
+    type: "etc",
+    color: "#4169E1",
+  },
+  {
+    id: "mongodb",
+    name: "MongoDB",
+    imageUrl: "/skills/mongodb.svg",
+    priority: "medium",
+    category: "Backend",
+    type: "etc",
+    color: "#47A248",
+  },
+  {
+    id: "express",
+    name: "Express",
+    imageUrl: "/skills/express.svg",
+    priority: "medium",
+    category: "Backend",
+    type: "fw",
+    color: "#000000",
+  },
+  {
+    id: "spring",
+    name: "Spring",
+    imageUrl: "/skills/spring.svg",
+    priority: "low",
+    category: "Backend",
+    type: "fw",
+    color: "#6DB33F",
+  },
+  {
+    id: "springboot",
+    name: "Spring Boot",
+    imageUrl: "/skills/springboot.svg",
+    priority: "low",
+    category: "Backend",
+    type: "fw",
+    color: "#6DB33F",
+  },
+
+  // DevOps & Tools
+  {
+    id: "git",
+    name: "Git",
+    imageUrl: "/skills/git.svg",
+    priority: "high",
+    category: "DevOps & Tools",
+    type: "etc",
+    color: "#F05032",
+  },
+  {
+    id: "github",
+    name: "GitHub",
+    imageUrl: "/skills/github.svg",
+    priority: "high",
+    category: "DevOps & Tools",
+    type: "etc",
+    color: "#181717",
+  },
+  {
+    id: "vercel",
+    name: "Vercel",
+    imageUrl: "/skills/vercel.svg",
+    priority: "medium",
+    category: "DevOps & Tools",
+    type: "etc",
+    color: "#000000",
+  },
+  {
+    id: "vite",
+    name: "Vite",
+    imageUrl: "/skills/vite.svg",
+    priority: "medium",
+    category: "DevOps & Tools",
+    type: "etc",
+    color: "#646CFF",
+  },
+  {
+    id: "pnpm",
+    name: "pnpm",
+    imageUrl: "/skills/pnpm.svg",
+    priority: "medium",
+    category: "DevOps & Tools",
+    type: "etc",
+    color: "#F69220",
+  },
+  {
+    id: "docker",
+    name: "Docker",
+    imageUrl: "/skills/docker.svg",
+    priority: "low",
+    category: "DevOps & Tools",
+    type: "etc",
+    color: "#2496ED",
+  },
+  {
+    id: "aws",
+    name: "AWS",
+    imageUrl: "/skills/aws.svg",
+    priority: "low",
+    category: "DevOps & Tools",
+    type: "etc",
+    color: "#232F3E",
+  },
+  {
+    id: "rollup",
+    name: "Rollup",
+    imageUrl: "/skills/rollupdotjs.svg",
+    priority: "low",
+    category: "DevOps & Tools",
+    type: "etc",
+    color: "#EC4A3F",
+  },
+  {
+    id: "eslint",
+    name: "ESLint",
+    imageUrl: "/skills/eslint.svg",
+    priority: "low",
+    category: "DevOps & Tools",
+    type: "etc",
+    color: "#4B32C3",
+  },
+  {
+    id: "prettier",
+    name: "Prettier",
+    imageUrl: "/skills/prettier.svg",
+    priority: "low",
+    category: "DevOps & Tools",
+    type: "etc",
+    color: "#F7B93E",
   },
 ];
+
+export const skills: Skill[] = [...raw].sort((a, b) => {
+  const p = priorityOrder[a.priority] - priorityOrder[b.priority];
+  if (p !== 0) return p;
+  return typeOrder[a.type] - typeOrder[b.type];
+});
+
+export const skillsByCategory: Record<SkillCategory, Skill[]> =
+  skillCategories.reduce(
+    (acc, category) => {
+      acc[category] = skills.filter((s) => s.category === category);
+      return acc;
+    },
+    {} as Record<SkillCategory, Skill[]>,
+  );
