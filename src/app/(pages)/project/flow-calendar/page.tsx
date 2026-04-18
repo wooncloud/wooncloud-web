@@ -1,4 +1,4 @@
-import TechBadge from "@/components/TechBadge";
+import ProjectPageShell from "@/components/ProjectPageShell";
 import flowCalendar from "@/assets/images/project/flow/calendar.webp";
 import Image from "next/image";
 import { generatePageMetadata } from "@/lib/metadata";
@@ -28,24 +28,20 @@ export const metadata = generatePageMetadata({
 
 export default function FlowCalendarProjectPage() {
   return (
-    <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">플로우 캘린더 개발</h1>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <TechBadge name="Java" />
-          <TechBadge name="JavaScript" />
-          <TechBadge name="PostgreSQL" />
-          <TechBadge name="jQuery" />
-          <TechBadge name="Jex Framework" />
-          <TechBadge name="FullCalendar" />
-        </div>
-        <div className="space-y-1">
-          <p className="text-muted-foreground">2024.12.01 - 2025.03.21</p>
-          <p className="text-muted-foreground">
-            마드라스체크(주) · SaaS 개발부
-          </p>
-        </div>
-        <div className="flex flex-col gap-4">
+    <ProjectPageShell
+      title="플로우 캘린더 개발"
+      tags={[
+        "Java",
+        "JavaScript",
+        "PostgreSQL",
+        "jQuery",
+        "Jex Framework",
+        "FullCalendar",
+      ]}
+      period="2024.12.01 - 2025.03.21"
+      company="마드라스체크(주) · SaaS 개발부"
+    >
+      <div className="flex flex-col gap-4">
           <Image
             src={flowCalendar}
             alt="flowCalendar"
@@ -127,9 +123,8 @@ export default function FlowCalendarProjectPage() {
               <strong className="text-foreground">모바일 웹뷰 최적화:</strong>{" "}
               반응형 디자인 및 터치 인터랙션 지원
             </li>
-          </ul>
-        </div>
+        </ul>
       </div>
-    </div>
+    </ProjectPageShell>
   );
 }

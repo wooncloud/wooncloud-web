@@ -1,4 +1,4 @@
-import TechBadge from "@/components/TechBadge";
+import ProjectPageShell from "@/components/ProjectPageShell";
 import ImageCarousel from "@/components/ImageCarousel";
 import flowTask from "@/assets/images/project/flow/task.webp";
 import flowGantt from "@/assets/images/project/flow/gantt.webp";
@@ -35,27 +35,23 @@ const images = [
 
 export default function FlowTaskProjectPage() {
   return (
-    <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">업무, 간트차트 리뉴얼 개발</h1>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <TechBadge name="Preact" />
-          <TechBadge name="Java" />
-          <TechBadge name="JavaScript" />
-          <TechBadge name="PostgreSQL" />
-          <TechBadge name="jQuery" />
-          <TechBadge name="Jex Framework" />
-          <TechBadge name="WebSocket" />
-          <TechBadge name="Dnd Kit" />
-          <TechBadge name="Artillery" />
-        </div>
-        <div className="space-y-1">
-          <p className="text-muted-foreground">2025.03.21 - 현재</p>
-          <p className="text-muted-foreground">
-            마드라스체크(주) · SaaS 개발부
-          </p>
-        </div>
-        <ImageCarousel images={images} />
+    <ProjectPageShell
+      title="업무, 간트차트 리뉴얼 개발"
+      tags={[
+        "Preact",
+        "Java",
+        "JavaScript",
+        "PostgreSQL",
+        "jQuery",
+        "Jex Framework",
+        "WebSocket",
+        "Dnd Kit",
+        "Artillery",
+      ]}
+      period="2025.03.21 - 현재"
+      company="마드라스체크(주) · SaaS 개발부"
+    >
+      <ImageCarousel images={images} />
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 배경</h3>
           <div className="text-muted-foreground space-y-3">
@@ -137,9 +133,8 @@ export default function FlowTaskProjectPage() {
               </strong>{" "}
               대규모 트래픽 환경에서의 시스템 안정성 검증
             </li>
-          </ul>
-        </div>
+        </ul>
       </div>
-    </div>
+    </ProjectPageShell>
   );
 }

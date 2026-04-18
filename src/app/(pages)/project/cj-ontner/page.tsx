@@ -1,4 +1,4 @@
-import TechBadge from "@/components/TechBadge";
+import ProjectPageShell from "@/components/ProjectPageShell";
 import { generatePageMetadata } from "@/lib/metadata";
 
 export const metadata = generatePageMetadata({
@@ -28,30 +28,24 @@ export const metadata = generatePageMetadata({
 
 export default function CjOntnerProjectPage() {
   return (
-    <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">
-        CJ 온트너 (CJ Onstyle Partner) 플로우 커스텀
-      </h1>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <TechBadge name="Java" />
-          <TechBadge name="JavaScript" />
-          <TechBadge name="PostgreSQL" />
-          <TechBadge name="MongoDB" />
-          <TechBadge name="jQuery" />
-          <TechBadge name="Jex Framework" />
-          <TechBadge name="Node.js" />
-          <TechBadge name="Express" />
-          <TechBadge name="SvelteKit" />
-          <TechBadge name="Next.js" />
-          <TechBadge name="Artillery" />
-        </div>
-        <div className="space-y-1">
-          <p className="text-muted-foreground">~ 2026.04.21</p>
-          <p className="text-muted-foreground">
-            마드라스체크(주) · SaaS 개발부 · 서버 개발 / PL
-          </p>
-        </div>
+    <ProjectPageShell
+      title="CJ 온트너 (CJ Onstyle Partner) 플로우 커스텀"
+      tags={[
+        "Java",
+        "JavaScript",
+        "PostgreSQL",
+        "MongoDB",
+        "jQuery",
+        "Jex Framework",
+        "Node.js",
+        "Express",
+        "SvelteKit",
+        "Next.js",
+        "Artillery",
+      ]}
+      period="~ 2026.04.21"
+      company="마드라스체크(주) · SaaS 개발부 · 서버 개발 / PL"
+    >
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <div className="text-muted-foreground space-y-3">
@@ -185,7 +179,6 @@ export default function CjOntnerProjectPage() {
             </li>
           </ul>
         </div>
-      </div>
-    </div>
+    </ProjectPageShell>
   );
 }

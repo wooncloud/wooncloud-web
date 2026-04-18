@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { skillsByCategory, skillCategories } from "@/lib/data/skills";
-import { getContrastTextColor } from "@/lib/utils";
+import TechBadge from "@/components/TechBadge";
 
 export default function SkillStack() {
   return (
@@ -17,33 +16,9 @@ export default function SkillStack() {
               {category}
             </div>
             <div className="flex flex-wrap gap-2">
-              {items.map((skill) => {
-                const fg = getContrastTextColor(skill.color);
-                return (
-                  <span
-                    key={skill.id}
-                    className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium"
-                    style={{ backgroundColor: skill.color, color: fg }}
-                  >
-                    <span
-                      className={`relative inline-block h-4 w-4 shrink-0 ${
-                        fg === "#ffffff"
-                          ? "[filter:brightness(0)_invert(1)]"
-                          : ""
-                      }`}
-                    >
-                      <Image
-                        src={skill.imageUrl}
-                        alt=""
-                        fill
-                        sizes="16px"
-                        className="object-contain"
-                      />
-                    </span>
-                    <span>{skill.name}</span>
-                  </span>
-                );
-              })}
+              {items.map((skill) => (
+                <TechBadge key={skill.id} name={skill.name} />
+              ))}
             </div>
           </div>
         );

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import recruit1 from "@/assets/images/project/recruit/gdrs.webp";
-import TechBadge from "@/components/TechBadge";
+import ProjectPageShell from "@/components/ProjectPageShell";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { generatePageMetadata } from "@/lib/metadata";
@@ -22,25 +22,21 @@ export const metadata = generatePageMetadata({
 
 export default function RecruitProjectPage() {
   return (
-    <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">채용 시스템 개발</h1>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <TechBadge name="Java 11" />
-          <TechBadge name="Spring Framework 4.3" />
-          <TechBadge name="Apache Tomcat 8.5" />
-          <TechBadge name="Oracle Database 11g" />
-          <TechBadge name="MyBatis" />
-          <TechBadge name="jQuery" />
-          <TechBadge name="SweetAlert2" />
-          <TechBadge name="Spring Security" />
-        </div>
-        <div className="space-y-1">
-          <p className="text-muted-foreground">2021.06.09 - 2021.07.01</p>
-          <p className="text-muted-foreground">
-            구디아카데미 · 개발 및 프로젝트 매니저 · 2인 협업
-          </p>
-        </div>
+    <ProjectPageShell
+      title="채용 시스템 개발"
+      tags={[
+        "Java 11",
+        "Spring Framework 4.3",
+        "Apache Tomcat 8.5",
+        "Oracle Database 11g",
+        "MyBatis",
+        "jQuery",
+        "SweetAlert2",
+        "Spring Security",
+      ]}
+      period="2021.06.09 - 2021.07.01"
+      company="구디아카데미 · 개발 및 프로젝트 매니저 · 2인 협업"
+    >
         <div className="flex flex-col gap-4">
           <Image
             src={recruit1}
@@ -121,7 +117,6 @@ export default function RecruitProjectPage() {
             </Link>
           </div>
         </div>
-      </div>
-    </div>
+    </ProjectPageShell>
   );
 }

@@ -1,4 +1,4 @@
-import TechBadge from "@/components/TechBadge";
+import ProjectPageShell from "@/components/ProjectPageShell";
 import ImageCarousel from "@/components/ImageCarousel";
 import flowPlan1 from "@/assets/images/project/flow/plan1.webp";
 import flowPlan2 from "@/assets/images/project/flow/plan2.webp";
@@ -32,23 +32,13 @@ const images = [
 
 export default function FlowPlanProjectPage() {
   return (
-    <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">플랜</h1>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <TechBadge name="Java" />
-          <TechBadge name="JavaScript" />
-          <TechBadge name="PostgreSQL" />
-          <TechBadge name="jQuery" />
-          <TechBadge name="Jex Framework" />
-        </div>
-        <div className="space-y-1">
-          <p className="text-muted-foreground">2022.11.30 - 2023.01.06</p>
-          <p className="text-muted-foreground">
-            마드라스체크(주) · SaaS 개발부
-          </p>
-        </div>
-        <ImageCarousel images={images} />
+    <ProjectPageShell
+      title="플랜"
+      tags={["Java", "JavaScript", "PostgreSQL", "jQuery", "Jex Framework"]}
+      period="2022.11.30 - 2023.01.06"
+      company="마드라스체크(주) · SaaS 개발부"
+    >
+      <ImageCarousel images={images} />
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 배경</h3>
           <div className="text-muted-foreground space-y-3">
@@ -97,9 +87,8 @@ export default function FlowPlanProjectPage() {
               <strong className="text-foreground">Frontend UI:</strong> jQuery
               기반 플랜 선택 및 업그레이드 UI 구현
             </li>
-          </ul>
-        </div>
+        </ul>
       </div>
-    </div>
+    </ProjectPageShell>
   );
 }

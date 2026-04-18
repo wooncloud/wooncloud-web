@@ -1,4 +1,4 @@
-import TechBadge from "@/components/TechBadge";
+import ProjectPageShell from "@/components/ProjectPageShell";
 import flowSecurity1 from "@/assets/images/project/flow/security1.webp";
 import Image from "next/image";
 import { generatePageMetadata } from "@/lib/metadata";
@@ -26,23 +26,13 @@ export const metadata = generatePageMetadata({
 
 export default function FlowSecurityProjectPage() {
   return (
-    <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">파일보안 / 로그인 보안</h1>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <TechBadge name="Java" />
-          <TechBadge name="JavaScript" />
-          <TechBadge name="PostgreSQL" />
-          <TechBadge name="jQuery" />
-          <TechBadge name="Jex Framework" />
-        </div>
-        <div className="space-y-1">
-          <p className="text-muted-foreground">2023.01.25 - 2023.04.19</p>
-          <p className="text-muted-foreground">
-            마드라스체크(주) · SaaS 개발부
-          </p>
-        </div>
-        <div className="flex flex-col gap-4">
+    <ProjectPageShell
+      title="파일보안 / 로그인 보안"
+      tags={["Java", "JavaScript", "PostgreSQL", "jQuery", "Jex Framework"]}
+      period="2023.01.25 - 2023.04.19"
+      company="마드라스체크(주) · SaaS 개발부"
+    >
+      <div className="flex flex-col gap-4">
           <Image
             src={flowSecurity1}
             alt="flowSecurity1"
@@ -102,9 +92,8 @@ export default function FlowSecurityProjectPage() {
               JavaScript, jQuery를 활용한 파일 보안 및 로그인 보안 설정 화면
               구현
             </li>
-          </ul>
-        </div>
+        </ul>
       </div>
-    </div>
+    </ProjectPageShell>
   );
 }

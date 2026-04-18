@@ -1,4 +1,4 @@
-import TechBadge from "@/components/TechBadge";
+import ProjectPageShell from "@/components/ProjectPageShell";
 import pmis1 from "@/assets/images/project/pmis/pmis1.webp";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,20 +16,20 @@ export const metadata = generatePageMetadata({
 
 export default function PmisMaintenancePage() {
   return (
-    <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">PMIS 건설사업관리시스템 유지보수</h1>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <TechBadge name="C#" />
-          <TechBadge name="ASP.NET WebForms" />
-          <TechBadge name="MS-SQL" />
-          <TechBadge name="JavaScript" />
-          <TechBadge name="ASP" />
-          <TechBadge name="Visual Basic" />
-          <TechBadge name="jQuery" />
-          <TechBadge name="Infragistics" />
-        </div>
-        <p className="text-muted-foreground">2019.03 - 2020.11</p>
+    <ProjectPageShell
+      title="PMIS 건설사업관리시스템 유지보수"
+      tags={[
+        "C#",
+        "ASP.NET WebForms",
+        "MS-SQL",
+        "JavaScript",
+        "ASP",
+        "Visual Basic",
+        "jQuery",
+        "Infragistics",
+      ]}
+      period="2019.03 - 2020.11"
+    >
         <div className="flex flex-col gap-4">
           <Image src={pmis1} alt="pmis1" width={1000} height={1000} />
         </div>
@@ -114,7 +114,6 @@ export default function PmisMaintenancePage() {
             </Link>
           </div>
         </div>
-      </div>
-    </div>
+    </ProjectPageShell>
   );
 }

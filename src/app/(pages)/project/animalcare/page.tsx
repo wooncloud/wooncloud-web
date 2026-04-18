@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TechBadge from "@/components/TechBadge";
+import ProjectPageShell from "@/components/ProjectPageShell";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { generatePageMetadata } from "@/lib/metadata";
@@ -21,23 +21,19 @@ export const metadata = generatePageMetadata({
 
 export default function AnimalCareProjectPage() {
   return (
-    <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">동물병원 예약 시스템</h1>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <TechBadge name="Java 11" />
-          <TechBadge name="Spring Framework 4.3" />
-          <TechBadge name="Apache Tomcat 8.5" />
-          <TechBadge name="Oracle Database 11g" />
-          <TechBadge name="MyBatis" />
-          <TechBadge name="jQuery" />
-        </div>
-        <div className="space-y-1">
-          <p className="text-muted-foreground">2021.07.02 - 2021.08.06</p>
-          <p className="text-muted-foreground">
-            구디아카데미 · 개발 및 프로젝트 매니저 · 5인 협업
-          </p>
-        </div>
+    <ProjectPageShell
+      title="동물병원 예약 시스템"
+      tags={[
+        "Java 11",
+        "Spring Framework 4.3",
+        "Apache Tomcat 8.5",
+        "Oracle Database 11g",
+        "MyBatis",
+        "jQuery",
+      ]}
+      period="2021.07.02 - 2021.08.06"
+      company="구디아카데미 · 개발 및 프로젝트 매니저 · 5인 협업"
+    >
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <div className="text-muted-foreground">
@@ -175,7 +171,6 @@ export default function AnimalCareProjectPage() {
             </Link>
           </div>
         </div>
-      </div>
-    </div>
+    </ProjectPageShell>
   );
 }

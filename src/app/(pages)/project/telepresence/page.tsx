@@ -1,4 +1,4 @@
-import TechBadge from "@/components/TechBadge";
+import ProjectPageShell from "@/components/ProjectPageShell";
 import ImageCarousel from "@/components/ImageCarousel";
 import tele1 from "@/assets/images/project/tele/tele1.webp";
 import tele2 from "@/assets/images/project/tele/tele2.webp";
@@ -27,46 +27,39 @@ const images = [
 
 export default function TelepresenceSocialVRPage() {
   return (
-    <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">텔레프레젠스 소셜 VR</h1>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <TechBadge name="Unity" />
-          <TechBadge name="C#" />
-          <TechBadge name=".NET" />
-          <TechBadge name="Visual Studio" />
-          <TechBadge name="VIVE VR" />
-        </div>
-        <p className="text-muted-foreground">2017.11 - 2018.12 (1년 2개월)</p>
-        <ImageCarousel images={images} />
-        <div className="space-y-3">
-          <h3 className="text-lg font-semibold">프로젝트 개요</h3>
-          <p className="text-muted-foreground">
-            국가과제형 텔레프레젠스 소셜 VR 프로젝트에 참여해 내부 콘텐츠와
-            인터랙션 UI를 구축하며 핵심 사용자 경험을 설계했습니다.
-          </p>
-        </div>
-        <div className="space-y-3">
-          <h3 className="text-lg font-semibold">담당 역할</h3>
-          <p className="text-muted-foreground">
-            내부 콘텐츠 개발 및 인터랙션 UI 개발
-          </p>
-        </div>
-        <div className="space-y-3">
-          <h3 className="text-lg font-semibold">주요 기여</h3>
-          <ul className="space-y-2 text-muted-foreground list-disc pl-6">
-            <li>
-              프로젝트 참여를 위해 채용되어 초기 프로토타입부터 운영 협업까지 전
-              과정에 기여
-            </li>
-            <li>사용자 행동 기반으로 반응하는 인터랙션 UI 설계 및 구현</li>
-            <li>
-              VR 컨트롤러와 헤드셋의 위치·각도 데이터를 활용한 상호작용 알고리즘
-              개발 및 특허 출원
-            </li>
-          </ul>
-        </div>
+    <ProjectPageShell
+      title="텔레프레젠스 소셜 VR"
+      tags={["Unity", "C#", ".NET", "Visual Studio", "VIVE VR"]}
+      period="2017.11 - 2018.12 (1년 2개월)"
+    >
+      <ImageCarousel images={images} />
+      <div className="space-y-3">
+        <h3 className="text-lg font-semibold">프로젝트 개요</h3>
+        <p className="text-muted-foreground">
+          국가과제형 텔레프레젠스 소셜 VR 프로젝트에 참여해 내부 콘텐츠와
+          인터랙션 UI를 구축하며 핵심 사용자 경험을 설계했습니다.
+        </p>
       </div>
-    </div>
+      <div className="space-y-3">
+        <h3 className="text-lg font-semibold">담당 역할</h3>
+        <p className="text-muted-foreground">
+          내부 콘텐츠 개발 및 인터랙션 UI 개발
+        </p>
+      </div>
+      <div className="space-y-3">
+        <h3 className="text-lg font-semibold">주요 기여</h3>
+        <ul className="space-y-2 text-muted-foreground list-disc pl-6">
+          <li>
+            프로젝트 참여를 위해 채용되어 초기 프로토타입부터 운영 협업까지 전
+            과정에 기여
+          </li>
+          <li>사용자 행동 기반으로 반응하는 인터랙션 UI 설계 및 구현</li>
+          <li>
+            VR 컨트롤러와 헤드셋의 위치·각도 데이터를 활용한 상호작용 알고리즘
+            개발 및 특허 출원
+          </li>
+        </ul>
+      </div>
+    </ProjectPageShell>
   );
 }

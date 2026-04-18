@@ -1,4 +1,4 @@
-import TechBadge from "@/components/TechBadge";
+import ProjectPageShell from "@/components/ProjectPageShell";
 import { generatePageMetadata } from "@/lib/metadata";
 
 export const metadata = generatePageMetadata({
@@ -22,22 +22,12 @@ export const metadata = generatePageMetadata({
 
 export default function HyundaiPmsProjectPage() {
   return (
-    <div className="py-6 space-y-6">
-      <h1 className="text-3xl font-bold">현대자동차 PMS 개발</h1>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <TechBadge name="TypeScript" />
-          <TechBadge name="Next.js" />
-          <TechBadge name="NestJS" />
-          <TechBadge name="PostgreSQL" />
-          <TechBadge name="pnpm" />
-        </div>
-        <div className="space-y-1">
-          <p className="text-muted-foreground">진행 중</p>
-          <p className="text-muted-foreground">
-            마드라스체크(주) · SaaS 개발부 · 개발 참여
-          </p>
-        </div>
+    <ProjectPageShell
+      title="현대자동차 PMS 개발"
+      tags={["TypeScript", "Next.js", "NestJS", "PostgreSQL", "pnpm"]}
+      period="진행 중"
+      company="마드라스체크(주) · SaaS 개발부 · 개발 참여"
+    >
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">프로젝트 개요</h3>
           <div className="text-muted-foreground space-y-3">
@@ -86,7 +76,6 @@ export default function HyundaiPmsProjectPage() {
             </li>
           </ul>
         </div>
-      </div>
-    </div>
+    </ProjectPageShell>
   );
 }
