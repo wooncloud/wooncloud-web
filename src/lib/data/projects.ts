@@ -9,6 +9,36 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "hyundai-pms",
+    title: "🚗 현대자동차 PMS 개발",
+    period: "진행 중",
+    description:
+      "현대자동차와 마드라스체크가 함께 추진하는 엔터프라이즈 PMS 구축 프로젝트로, 초기 계약 규모 20억 원의 PMS 사업의 시작점",
+    tags: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "pnpm"],
+    path: "/project/hyundai-pms",
+  },
+  {
+    id: "cj-ontner",
+    title: "🤝 CJ 온트너 (CJ Onstyle Partner) 플로우 커스텀",
+    period: "~ 2026.04.21",
+    description:
+      "CJ ENM 커머스의 엔터프라이즈 사업을 위한 플로우 커스텀 플랫폼으로, 개발비 2억 이상 · 연간 운영비 4천만 원 규모의 프로젝트에서 서버 개발 및 PL 담당",
+    tags: [
+      "Java",
+      "JavaScript",
+      "PostgreSQL",
+      "MongoDB",
+      "jQuery",
+      "Jex Framework",
+      "Node.js",
+      "Express",
+      "SvelteKit",
+      "Next.js",
+      "Artillery",
+    ],
+    path: "/project/cj-ontner",
+  },
+  {
     id: "flow-task",
     title: "📋 업무, 간트차트 리뉴얼 개발",
     period: "2025.03.21 - 현재",
