@@ -5,6 +5,7 @@ import flow1 from "@/assets/images/experience/flow.webp";
 import flow2 from "@/assets/images/experience/flow2.webp";
 import { Card, CardContent } from "@/components/ui/card";
 import { generatePageMetadata } from "@/lib/metadata";
+import { projects } from "@/lib/data/projects";
 
 export const metadata = generatePageMetadata({
   title: "마드라스체크 경력",
@@ -26,80 +27,70 @@ export const metadata = generatePageMetadata({
 
 const projectCards = [
   {
-    href: "/project/hyundai-pms",
-    emoji: "🚗",
+    id: "hyundai-pms",
     title: "현대자동차 PMS 개발",
     period: "진행 중",
     description:
       "현대자동차와 마드라스체크가 함께 추진하는 엔터프라이즈 PMS 구축 프로젝트로, 초기 계약 20억 원 규모의 전략 사업",
   },
   {
-    href: "/project/cj-ontner",
-    emoji: "🤝",
+    id: "cj-ontner",
     title: "CJ 온트너 플로우 커스텀",
     period: "~ 2026.04.21",
     description:
       "CJ ENM 커머스의 엔터프라이즈 파트너스 플랫폼으로 플로우를 커스텀한 프로젝트. 서버 개발 및 PL로 참여",
   },
   {
-    href: "/project/flow-task",
-    emoji: "📋",
+    id: "flow-task",
     title: "업무, 간트차트 리뉴얼 개발",
     period: "2025.03.21 - 현재",
     description:
       "커스텀 컬럼, 다중 하위업무, 커스텀 상태 관리 등을 지원하는 업무 시스템을 Preact 기반으로 리뉴얼",
   },
   {
-    href: "/project/flow-calendar",
-    emoji: "📅",
+    id: "flow-calendar",
     title: "플로우 캘린더 개발",
     period: "2024.12.01 - 2025.03.21",
     description:
       "개인 및 프로젝트 캘린더를 통합하고 구글 캘린더 연동, 타임존, 반복일정 등을 지원하는 통합 캘린더 시스템 개발",
   },
   {
-    href: "/project/flow-ai",
-    emoji: "🤖",
+    id: "flow-ai",
     title: "플로우 AI / LLM 서버 개발",
     period: "2024.01.22 - 2024.04.05",
     description:
       "OpenAI API와 Function Calling을 활용한 업무 검색 및 프로젝트 템플릿 생성 AI 기능 개발 및 Node.js 기반 LLM 서버 구축",
   },
   {
-    href: "/project/flow-security",
-    emoji: "🔒",
+    id: "flow-security",
     title: "파일보안 / 로그인 보안 개발",
     period: "2023.01.25 - 2023.04.19",
     description:
       "환경별 다운로드 정책, IP 화이트리스트, 로그인 보안 등 철저한 로깅을 통한 기업 데이터 보안 체계 구축",
   },
   {
-    href: "/project/flow-plan",
-    emoji: "💳",
+    id: "flow-plan",
     title: "요금 정책 및 플랜 관리 시스템 개발",
     period: "2022.11.30 - 2023.01.06",
     description:
       "다양한 요금제 생성 및 플랜별 기능 제한 매칭 시스템 개발로 유연한 정책 변경 및 고객 맞춤 서비스 제공",
   },
   {
-    href: "/project/flow-master",
-    emoji: "⚙️",
+    id: "flow-master",
     title: "마스터어드민 고도화",
     period: "2022.11.07 - 2022.11.29",
     description:
       "분산된 2개의 마스터어드민을 통합하고 고객 및 기업 관리에 중점을 둔 CX팀 지원 시스템 개발",
   },
   {
-    href: "/project/flow-notice",
-    emoji: "📢",
+    id: "flow-notice",
     title: "공지, 배너 관리 시스템 개발",
     period: "2021.11.10 - 2022.01.05",
     description:
       "타겟팅, 다국어 지원, 타임존 기반 예약 게시를 통한 공지사항 및 배너 관리 시스템 개발",
   },
   {
-    href: "/project/flow-qa",
-    emoji: "🔧",
+    id: "flow-qa",
     title: "플로우 전반적인 유지보수 및 개선",
     period: "2021.10.12 - 현재",
     description:
@@ -140,30 +131,43 @@ export default function MadrasCheckExperiencePage() {
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">담당 및 참여 프로젝트</h3>
           <div className="grid gap-4 md:grid-cols-2">
-            {projectCards.map((card) => (
-              <Link key={card.href} href={card.href} className="group">
-                <Card className="h-full transition-all hover:shadow-lg hover:border-primary">
-                  <CardContent className="p-4">
-                    <div className="space-y-2">
-                      <div className="flex items-start gap-2">
-                        <span className="text-2xl">{card.emoji}</span>
-                        <div className="flex-1">
-                          <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                            {card.title}
-                          </h4>
-                          <p className="text-xs text-muted-foreground mt-1">
-                            {card.period}
-                          </p>
+            {projectCards.map((card) => {
+              const project = projects.find((p) => p.id === card.id);
+              const Icon = project?.icon;
+              return (
+                <Link
+                  key={card.id}
+                  href={`/project/${card.id}`}
+                  className="group"
+                >
+                  <Card className="h-full transition-all hover:shadow-lg hover:border-primary">
+                    <CardContent className="p-4">
+                      <div className="space-y-2">
+                        <div className="flex items-start gap-2">
+                          {Icon && (
+                            <Icon
+                              className="h-6 w-6 shrink-0 mt-0.5"
+                              aria-hidden="true"
+                            />
+                          )}
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                              {card.title}
+                            </h4>
+                            <p className="text-xs text-muted-foreground mt-1">
+                              {card.period}
+                            </p>
+                          </div>
                         </div>
+                        <p className="text-sm text-muted-foreground">
+                          {card.description}
+                        </p>
                       </div>
-                      <p className="text-sm text-muted-foreground">
-                        {card.description}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>

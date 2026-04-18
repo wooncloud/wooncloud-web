@@ -11,6 +11,15 @@ import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 import FloatingButton from "@/components/FloatingButton";
 import Section from "@/components/Section";
+import {
+  UserRound,
+  Wrench,
+  Briefcase,
+  FolderGit2,
+  Sparkles,
+  Award,
+  GraduationCap,
+} from "lucide-react";
 
 const certifications = [
   { title: "정보처리기사", date: "2021.06.03" },
@@ -86,25 +95,33 @@ export default function Home() {
         </Link>
       </nav>
 
-      <Section id="about-me" title="About Me">
+      <Section id="about-me" title="About Me" icon={UserRound}>
         <AboutMe />
       </Section>
 
-      <Section id="skill-stack" title="Skill Stack">
+      <Section id="skill-stack" title="Skill Stack" icon={Wrench}>
         <SkillStack />
       </Section>
 
-      <Section id="experience" title="Experience">
+      <Section id="experience" title="Experience" icon={Briefcase}>
         <Experience />
       </Section>
 
-      <Section id="project" title="Project">
+      <Section id="project" title="Project" icon={FolderGit2}>
         <Project />
       </Section>
 
-      <Section id="activities" title="Activities" className="py-4">
+      <Section
+        id="activities"
+        title="Activities"
+        icon={Sparkles}
+        className="py-4"
+      >
         <article className="py-3 flex flex-col gap-4">
-          <h3 className="text-lg font-bold">Certification</h3>
+          <h3 className="text-lg font-bold flex items-center gap-2">
+            <Award className="h-5 w-5" aria-hidden="true" />
+            Certification
+          </h3>
           <div className="space-y-3">
             {certifications.map((cert) => (
               <CertificationCard key={cert.title} {...cert} />
@@ -112,7 +129,10 @@ export default function Home() {
           </div>
         </article>
         <article className="py-3 flex flex-col gap-4">
-          <h3 className="text-lg font-bold">Education</h3>
+          <h3 className="text-lg font-bold flex items-center gap-2">
+            <GraduationCap className="h-5 w-5" aria-hidden="true" />
+            Education
+          </h3>
           <div className="space-y-3">
             {education.map((edu) => (
               <EducationCard key={edu.title} {...edu} />
