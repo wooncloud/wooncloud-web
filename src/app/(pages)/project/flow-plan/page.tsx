@@ -26,8 +26,8 @@ export const metadata = generatePageMetadata({
 });
 
 const images = [
-  { src: flowPlan1, alt: "flowPlan1" },
-  { src: flowPlan2, alt: "flowPlan2" },
+  { src: flowPlan1, alt: "flow 플랜 선택 화면 - 요금제별 기능 비교" },
+  { src: flowPlan2, alt: "flow 플랜 관리 어드민 - 플랜별 기능 매칭" },
 ];
 
 export default function FlowPlanProjectPage() {

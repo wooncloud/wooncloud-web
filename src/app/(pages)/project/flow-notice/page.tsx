@@ -25,8 +25,8 @@ export const metadata = generatePageMetadata({
 });
 
 const images = [
-  { src: flowNotice1, alt: "flowNotice1" },
-  { src: flowNotice2, alt: "flowNotice2" },
+  { src: flowNotice1, alt: "flow 공지 관리 어드민 - 타겟팅 및 다국어 설정" },
+  { src: flowNotice2, alt: "flow 배너 노출 화면 - 사용자 세분화 예시" },
 ];
 
 export default function FlowNoticeProjectPage() {

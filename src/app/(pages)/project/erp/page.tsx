@@ -24,8 +24,8 @@ export const metadata = generatePageMetadata({
 });
 
 const images = [
-  { src: itmERP1, alt: "itmERP1" },
-  { src: itmERP2, alt: "itmERP2" },
+  { src: itmERP1, alt: "ERP 인사관리 화면 - 인사명령 및 휴가 관리" },
+  { src: itmERP2, alt: "ERP 프로젝트 관리 대시보드 - KPI 시각화" },
 ];
 
 export default function ErpIntranetSystemPage() {

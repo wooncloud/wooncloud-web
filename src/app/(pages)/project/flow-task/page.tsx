@@ -29,8 +29,8 @@ export const metadata = generatePageMetadata({
 });
 
 const images = [
-  { src: flowTask, alt: "flowTask" },
-  { src: flowGantt, alt: "flowGantt" },
+  { src: flowTask, alt: "flow 업무 대시보드 - 커스텀 컬럼과 다중 하위업무" },
+  { src: flowGantt, alt: "flow 간트차트 - 프로젝트 일정 시각화" },
 ];
 
 export default function FlowTaskProjectPage() {

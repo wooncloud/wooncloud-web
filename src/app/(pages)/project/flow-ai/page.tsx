@@ -28,8 +28,8 @@ export const metadata = generatePageMetadata({
 });
 
 const images = [
-  { src: flowAi1, alt: "flowAi1" },
-  { src: flowAi2, alt: "flowAi2" },
+  { src: flowAi1, alt: "flow AI 업무 검색 - 자연어 입력으로 업무 필터링" },
+  { src: flowAi2, alt: "flow AI 프로젝트 템플릿 자동 생성 화면" },
 ];
 
 export default function FlowAiProjectPage() {
