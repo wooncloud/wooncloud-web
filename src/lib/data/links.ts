@@ -1,16 +1,15 @@
 import { Github, Rss } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
-// 타입 정의
 export interface Link {
   id: string;
   url: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
+  iconSrc?: string;
   label: string;
   ariaLabel: string;
 }
 
-// 링크 데이터
 export const links: Link[] = [
   {
     id: "blog",
@@ -25,5 +24,12 @@ export const links: Link[] = [
     icon: Github,
     label: "깃허브 (github)",
     ariaLabel: "운구름의 GitHub 프로필로 이동",
+  },
+  {
+    id: "linkedin",
+    url: "https://www.linkedin.com/in/wooncloud/",
+    iconSrc: "/resources/linkedin.svg",
+    label: "링크드인 (linkedin)",
+    ariaLabel: "운구름의 LinkedIn 프로필로 이동",
   },
 ];
