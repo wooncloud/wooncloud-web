@@ -61,7 +61,7 @@ export const skills: Skill[] = [
     imageUrl: "/skills/nestjs.svg",
     description:
       "Node.js 기반의 백엔드 프레임워크로, 모듈 기반 아키텍처와 TypeScript를 활용한 서버 개발에 사용하고 있습니다.",
-    priority: "medium",
+    priority: "high",
   },
   {
     id: "preact",
@@ -69,7 +69,7 @@ export const skills: Skill[] = [
     imageUrl: "/skills/preact.svg",
     description:
       "마드라스체크에서 주로 사용하고 있는 react 기반의 경량 프론트엔드 프레임워크이며, 이 프레임워크로 플로우의 업무, 간트차트 등 많은 프론트엔드 부분을 개발하고 있습니다.",
-    priority: "high",
+    priority: "medium",
   },
   {
     id: "svelte",
