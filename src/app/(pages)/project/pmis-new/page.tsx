@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import pmis2 from "@/assets/images/project/pmis-new/pmis2.webp";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,12 +27,12 @@ export default function PmisNewDevelopmentPage() {
       <h1 className="text-3xl font-bold">PMIS 건설사업관리시스템 신규 개발</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>C#</Badge>
-          <Badge>ASP.NET MVC</Badge>
-          <Badge>MS-SQL</Badge>
-          <Badge>JavaScript</Badge>
-          <Badge variant="outline">jQuery</Badge>
-          <Badge variant="outline">Infragistics</Badge>
+          <TechBadge name="C#" />
+          <TechBadge name="ASP.NET MVC" />
+          <TechBadge name="MS-SQL" />
+          <TechBadge name="JavaScript" />
+          <TechBadge name="jQuery" />
+          <TechBadge name="Infragistics" />
         </div>
         <p className="text-muted-foreground">2020.04 - 2020.11</p>
         <div className="flex flex-col gap-4">

@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import ImageCarousel from "@/components/ImageCarousel";
 import tele1 from "@/assets/images/project/tele/tele1.webp";
 import tele2 from "@/assets/images/project/tele/tele2.webp";
@@ -31,11 +31,11 @@ export default function TelepresenceSocialVRPage() {
       <h1 className="text-3xl font-bold">텔레프레젠스 소셜 VR</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>Unity</Badge>
-          <Badge>C#</Badge>
-          <Badge>.NET</Badge>
-          <Badge>Visual Studio</Badge>
-          <Badge>VIVE VR</Badge>
+          <TechBadge name="Unity" />
+          <TechBadge name="C#" />
+          <TechBadge name=".NET" />
+          <TechBadge name="Visual Studio" />
+          <TechBadge name="VIVE VR" />
         </div>
         <p className="text-muted-foreground">2017.11 - 2018.12 (1년 2개월)</p>
         <ImageCarousel images={images} />

@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import ImageCarousel from "@/components/ImageCarousel";
 import flowTask from "@/assets/images/project/flow/task.webp";
 import flowGantt from "@/assets/images/project/flow/gantt.webp";
@@ -39,15 +39,15 @@ export default function FlowTaskProjectPage() {
       <h1 className="text-3xl font-bold">업무, 간트차트 리뉴얼 개발</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>Preact</Badge>
-          <Badge>Java</Badge>
-          <Badge>JavaScript</Badge>
-          <Badge>PostgreSQL</Badge>
-          <Badge>jQuery</Badge>
-          <Badge>Jex Framework</Badge>
-          <Badge>WebSocket</Badge>
-          <Badge>Dnd Kit</Badge>
-          <Badge>Artillery</Badge>
+          <TechBadge name="Preact" />
+          <TechBadge name="Java" />
+          <TechBadge name="JavaScript" />
+          <TechBadge name="PostgreSQL" />
+          <TechBadge name="jQuery" />
+          <TechBadge name="Jex Framework" />
+          <TechBadge name="WebSocket" />
+          <TechBadge name="Dnd Kit" />
+          <TechBadge name="Artillery" />
         </div>
         <div className="space-y-1">
           <p className="text-muted-foreground">2025.03.21 - 현재</p>

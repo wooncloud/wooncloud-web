@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -34,13 +34,13 @@ export default function ErpIntranetSystemPage() {
       <h1 className="text-3xl font-bold">사내 ERP 시스템 개발</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>C#</Badge>
-          <Badge>ASP.NET WebForms</Badge>
-          <Badge>MS-SQL</Badge>
-          <Badge>JavaScript</Badge>
-          <Badge variant="outline">Visual Studio</Badge>
-          <Badge variant="outline">jQuery</Badge>
-          <Badge variant="outline">Infragistics</Badge>
+          <TechBadge name="C#" />
+          <TechBadge name="ASP.NET WebForms" />
+          <TechBadge name="MS-SQL" />
+          <TechBadge name="JavaScript" />
+          <TechBadge name="Visual Studio" />
+          <TechBadge name="jQuery" />
+          <TechBadge name="Infragistics" />
         </div>
         <p className="text-muted-foreground">2019.05 - 2019.10</p>
         <ImageCarousel images={images} />

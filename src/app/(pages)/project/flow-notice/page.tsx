@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import ImageCarousel from "@/components/ImageCarousel";
 import flowNotice1 from "@/assets/images/project/flow/notice1.webp";
 import flowNotice2 from "@/assets/images/project/flow/notice2.webp";
@@ -35,11 +35,11 @@ export default function FlowNoticeProjectPage() {
       <h1 className="text-3xl font-bold">공지, 배너</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>Java</Badge>
-          <Badge>JavaScript</Badge>
-          <Badge>PostgreSQL</Badge>
-          <Badge>jQuery</Badge>
-          <Badge>Jex Framework</Badge>
+          <TechBadge name="Java" />
+          <TechBadge name="JavaScript" />
+          <TechBadge name="PostgreSQL" />
+          <TechBadge name="jQuery" />
+          <TechBadge name="Jex Framework" />
         </div>
         <div className="space-y-1">
           <p className="text-muted-foreground">2021.11.10 - 2022.01.05</p>

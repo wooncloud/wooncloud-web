@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import ImageCarousel from "@/components/ImageCarousel";
 import ses1 from "@/assets/images/project/ses/ses1.webp";
 import ses2 from "@/assets/images/project/ses/ses2.webp";
@@ -43,11 +43,11 @@ export default function KyungwoonCessnaMaintenanceSimPage() {
       </h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>C#</Badge>
-          <Badge>Unity</Badge>
-          <Badge>.NET</Badge>
-          <Badge variant="secondary">Visual Studio</Badge>
-          <Badge variant="secondary">VIVE VR</Badge>
+          <TechBadge name="C#" />
+          <TechBadge name="Unity" />
+          <TechBadge name=".NET" />
+          <TechBadge name="Visual Studio" />
+          <TechBadge name="VIVE VR" />
         </div>
         <p className="text-muted-foreground">2018.10 - 2018.12 (3개월)</p>
         <div className="w-full aspect-video">

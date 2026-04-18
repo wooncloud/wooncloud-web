@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import Link from "next/link";
 import { projects } from "@/lib/data/projects";
 
@@ -23,7 +23,7 @@ export default function Project() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag, tagIndex) => (
-                  <Badge key={tagIndex}>{tag}</Badge>
+                  <TechBadge key={tagIndex} name={tag} />
                 ))}
               </div>
             </CardContent>

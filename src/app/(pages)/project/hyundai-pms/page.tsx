@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import { generatePageMetadata } from "@/lib/metadata";
 
 export const metadata = generatePageMetadata({
@@ -26,11 +26,11 @@ export default function HyundaiPmsProjectPage() {
       <h1 className="text-3xl font-bold">현대자동차 PMS 개발</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>TypeScript</Badge>
-          <Badge>Next.js</Badge>
-          <Badge>NestJS</Badge>
-          <Badge>PostgreSQL</Badge>
-          <Badge variant="outline">pnpm</Badge>
+          <TechBadge name="TypeScript" />
+          <TechBadge name="Next.js" />
+          <TechBadge name="NestJS" />
+          <TechBadge name="PostgreSQL" />
+          <TechBadge name="pnpm" />
         </div>
         <div className="space-y-1">
           <p className="text-muted-foreground">진행 중</p>

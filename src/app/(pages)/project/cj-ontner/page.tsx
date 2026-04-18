@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import { generatePageMetadata } from "@/lib/metadata";
 
 export const metadata = generatePageMetadata({
@@ -34,17 +34,17 @@ export default function CjOntnerProjectPage() {
       </h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>Java</Badge>
-          <Badge>JavaScript</Badge>
-          <Badge>PostgreSQL</Badge>
-          <Badge>MongoDB</Badge>
-          <Badge>jQuery</Badge>
-          <Badge>Jex Framework</Badge>
-          <Badge>Node.js</Badge>
-          <Badge>Express</Badge>
-          <Badge>SvelteKit</Badge>
-          <Badge>Next.js</Badge>
-          <Badge variant="secondary">Artillery</Badge>
+          <TechBadge name="Java" />
+          <TechBadge name="JavaScript" />
+          <TechBadge name="PostgreSQL" />
+          <TechBadge name="MongoDB" />
+          <TechBadge name="jQuery" />
+          <TechBadge name="Jex Framework" />
+          <TechBadge name="Node.js" />
+          <TechBadge name="Express" />
+          <TechBadge name="SvelteKit" />
+          <TechBadge name="Next.js" />
+          <TechBadge name="Artillery" />
         </div>
         <div className="space-y-1">
           <p className="text-muted-foreground">~ 2026.04.21</p>

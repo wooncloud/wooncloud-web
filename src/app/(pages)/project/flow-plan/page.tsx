@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import ImageCarousel from "@/components/ImageCarousel";
 import flowPlan1 from "@/assets/images/project/flow/plan1.webp";
 import flowPlan2 from "@/assets/images/project/flow/plan2.webp";
@@ -36,11 +36,11 @@ export default function FlowPlanProjectPage() {
       <h1 className="text-3xl font-bold">플랜</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>Java</Badge>
-          <Badge>JavaScript</Badge>
-          <Badge>PostgreSQL</Badge>
-          <Badge>jQuery</Badge>
-          <Badge>Jex Framework</Badge>
+          <TechBadge name="Java" />
+          <TechBadge name="JavaScript" />
+          <TechBadge name="PostgreSQL" />
+          <TechBadge name="jQuery" />
+          <TechBadge name="Jex Framework" />
         </div>
         <div className="space-y-1">
           <p className="text-muted-foreground">2022.11.30 - 2023.01.06</p>

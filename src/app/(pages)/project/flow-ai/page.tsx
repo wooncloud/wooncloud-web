@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import ImageCarousel from "@/components/ImageCarousel";
 import flowAi1 from "@/assets/images/project/flow/ai1.webp";
 import flowAi2 from "@/assets/images/project/flow/ai2.webp";
@@ -38,14 +38,14 @@ export default function FlowAiProjectPage() {
       <h1 className="text-3xl font-bold">플로우 AI / LLM 서버 개발</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>OpenAI</Badge>
-          <Badge>Node.js</Badge>
-          <Badge>Express</Badge>
-          <Badge>Java</Badge>
-          <Badge>JavaScript</Badge>
-          <Badge>PostgreSQL</Badge>
-          <Badge>jQuery</Badge>
-          <Badge>Jex Framework</Badge>
+          <TechBadge name="OpenAI" />
+          <TechBadge name="Node.js" />
+          <TechBadge name="Express" />
+          <TechBadge name="Java" />
+          <TechBadge name="JavaScript" />
+          <TechBadge name="PostgreSQL" />
+          <TechBadge name="jQuery" />
+          <TechBadge name="Jex Framework" />
         </div>
         <div className="space-y-1">
           <p className="text-muted-foreground">2024.01.22 - 2024.04.05</p>

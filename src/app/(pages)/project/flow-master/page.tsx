@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import flowMaster from "@/assets/images/project/flow/master.webp";
 import Image from "next/image";
 import { generatePageMetadata } from "@/lib/metadata";
@@ -28,11 +28,11 @@ export default function FlowMasterProjectPage() {
       <h1 className="text-3xl font-bold">마스터어드민</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>Java</Badge>
-          <Badge>JavaScript</Badge>
-          <Badge>PostgreSQL</Badge>
-          <Badge>jQuery</Badge>
-          <Badge>Jex Framework</Badge>
+          <TechBadge name="Java" />
+          <TechBadge name="JavaScript" />
+          <TechBadge name="PostgreSQL" />
+          <TechBadge name="jQuery" />
+          <TechBadge name="Jex Framework" />
         </div>
         <div className="space-y-1">
           <p className="text-muted-foreground">2022.11.07 - 2022.11.29</p>

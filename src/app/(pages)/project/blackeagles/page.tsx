@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import ImageCarousel from "@/components/ImageCarousel";
 import be1 from "@/assets/images/project/be/be1.webp";
 import be2 from "@/assets/images/project/be/be2.webp";
@@ -43,12 +43,12 @@ export default function BlackEaglesVRSimulationPage() {
       </h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>C#</Badge>
-          <Badge>Unity</Badge>
-          <Badge>.NET</Badge>
-          <Badge variant="secondary">VIVE VR</Badge>
-          <Badge variant="secondary">Visual Studio</Badge>
-          <Badge variant="secondary">Sym4d</Badge>
+          <TechBadge name="C#" />
+          <TechBadge name="Unity" />
+          <TechBadge name=".NET" />
+          <TechBadge name="VIVE VR" />
+          <TechBadge name="Visual Studio" />
+          <TechBadge name="Sym4d" />
         </div>
         <p className="text-muted-foreground">2018.05 - 2018.10 (6개월)</p>
         <div className="w-full aspect-video">

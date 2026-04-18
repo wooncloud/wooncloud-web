@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import recruit1 from "@/assets/images/project/recruit/gdrs.webp";
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { generatePageMetadata } from "@/lib/metadata";
@@ -26,14 +26,14 @@ export default function RecruitProjectPage() {
       <h1 className="text-3xl font-bold">채용 시스템 개발</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>Java 11</Badge>
-          <Badge>Spring Framework 4.3</Badge>
-          <Badge>Apache Tomcat 8.5</Badge>
-          <Badge>Oracle Database 11g</Badge>
-          <Badge>MyBatis</Badge>
-          <Badge>jQuery</Badge>
-          <Badge>SweetAlert2</Badge>
-          <Badge>Spring Security</Badge>
+          <TechBadge name="Java 11" />
+          <TechBadge name="Spring Framework 4.3" />
+          <TechBadge name="Apache Tomcat 8.5" />
+          <TechBadge name="Oracle Database 11g" />
+          <TechBadge name="MyBatis" />
+          <TechBadge name="jQuery" />
+          <TechBadge name="SweetAlert2" />
+          <TechBadge name="Spring Security" />
         </div>
         <div className="space-y-1">
           <p className="text-muted-foreground">2021.06.09 - 2021.07.01</p>

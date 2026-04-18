@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechBadge from "@/components/TechBadge";
 import flowCalendar from "@/assets/images/project/flow/calendar.webp";
 import Image from "next/image";
 import { generatePageMetadata } from "@/lib/metadata";
@@ -32,12 +32,12 @@ export default function FlowCalendarProjectPage() {
       <h1 className="text-3xl font-bold">플로우 캘린더 개발</h1>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
-          <Badge>Java</Badge>
-          <Badge>JavaScript</Badge>
-          <Badge>PostgreSQL</Badge>
-          <Badge>jQuery</Badge>
-          <Badge>Jex Framework</Badge>
-          <Badge>FullCalendar</Badge>
+          <TechBadge name="Java" />
+          <TechBadge name="JavaScript" />
+          <TechBadge name="PostgreSQL" />
+          <TechBadge name="jQuery" />
+          <TechBadge name="Jex Framework" />
+          <TechBadge name="FullCalendar" />
         </div>
         <div className="space-y-1">
           <p className="text-muted-foreground">2024.12.01 - 2025.03.21</p>
