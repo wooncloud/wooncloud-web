@@ -356,6 +356,9 @@ export interface ExtraTech {
 
 export const extraTechs: Record<string, ExtraTech> = {
   openai: { color: "#412991" },
+  awss3: { color: "#569A31" },
+  redis: { color: "#DC382D" },
+  bullmq: { color: "#C0392B" },
   websocket: { color: "#010101" },
   dndkit: { color: "#0069FF" },
   artillery: { color: "#FF6A3D" },

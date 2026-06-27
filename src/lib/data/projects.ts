@@ -16,6 +16,7 @@ import {
   Construction,
   Glasses,
   Plane,
+  HardDrive,
   type LucideIcon,
 } from "lucide-react";
 
@@ -61,6 +62,26 @@ export const projects: Project[] = [
       "Artillery",
     ],
     path: "/project/cj-ontner",
+  },
+  {
+    id: "flow-drive",
+    title: "플로우 드라이브 개발",
+    icon: HardDrive,
+    period: "2026.05.27 - 2026.06.25",
+    description:
+      "협업툴 flow에 통합되는 엔터프라이즈 파일 관리 제품을 약 1개월간 풀스택 개발 주도하여 문서·동영상 미리보기, 전문검색, 버전관리, 외부 임베드와 정책 기반 권한·멀티테넌시까지 구현",
+    tags: [
+      "TypeScript",
+      "React",
+      "Vite",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Redis",
+      "AWS S3",
+      "BullMQ",
+    ],
+    path: "/project/flow-drive",
   },
   {
     id: "flow-task",

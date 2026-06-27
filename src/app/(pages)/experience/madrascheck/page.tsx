@@ -10,7 +10,7 @@ import { projects } from "@/lib/data/projects";
 export const metadata = generatePageMetadata({
   title: "마드라스체크 경력",
   description:
-    "마드라스체크에서 SaaS 풀스택 개발자로 근무하며 협업툴 플로우(flow) 개발을 담당하고 있습니다. 업무 모듈, 캘린더, AI/LLM 서버, 보안 기능 등을 개발했습니다.",
+    "마드라스체크에서 SaaS 풀스택 개발자로 근무하며 협업툴 플로우(flow) 개발을 담당하고 있습니다. 업무 모듈, 캘린더, 파일 드라이브, AI/LLM 서버, 보안 기능 등을 개발했습니다.",
   keywords: [
     "마드라스체크",
     "flow",
@@ -19,6 +19,8 @@ export const metadata = generatePageMetadata({
     "협업툴",
     "경력",
     "풀스택 개발자",
+    "파일관리",
+    "드라이브",
     "AI",
     "LLM",
   ],
@@ -39,6 +41,13 @@ const projectCards = [
     period: "~ 2026.04.21",
     description:
       "CJ ENM 커머스의 엔터프라이즈 파트너스 플랫폼으로 플로우를 커스텀한 프로젝트. 서버 개발 및 PL로 참여",
+  },
+  {
+    id: "flow-drive",
+    title: "플로우 드라이브 개발",
+    period: "2026.05.27 - 2026.06.25",
+    description:
+      "협업툴 flow에 통합되는 엔터프라이즈 파일 관리 제품을 약 1개월간 풀스택 개발 주도하여 미리보기·전문검색·버전관리·외부 임베드까지 구현",
   },
   {
     id: "flow-task",
