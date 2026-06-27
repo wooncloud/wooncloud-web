@@ -32,22 +32,12 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "hyundai-pms",
-    title: "현대자동차 PMS 개발",
-    icon: Car,
-    period: "진행 중",
-    description:
-      "현대자동차와 마드라스체크가 함께 추진하는 엔터프라이즈 PMS 구축 프로젝트로, 초기 계약 규모 20억 원의 PMS 사업의 시작점",
-    tags: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "pnpm"],
-    path: "/project/hyundai-pms",
-  },
-  {
     id: "cj-ontner",
     title: "CJ 온트너 (CJ Onstyle Partner) 플로우 커스텀",
     icon: Handshake,
     period: "~ 2026.04.21",
     description:
-      "CJ ENM 커머스의 엔터프라이즈 사업을 위한 플로우 커스텀 플랫폼으로, 개발비 2억 이상 · 연간 운영비 4천만 원 규모의 프로젝트에서 서버 개발 및 PL 담당",
+      "CJ ENM 커머스의 엔터프라이즈 사업을 위한 플로우 커스텀 파트너스 플랫폼으로, 대형 엔터프라이즈 프로젝트에서 서버 개발 및 PL 담당",
     tags: [
       "Java",
       "JavaScript",
@@ -62,6 +52,16 @@ export const projects: Project[] = [
       "Artillery",
     ],
     path: "/project/cj-ontner",
+  },
+  {
+    id: "hyundai-pms",
+    title: "현대자동차 PMS 개발",
+    icon: Car,
+    period: "진행 중",
+    description:
+      "현대자동차와 마드라스체크가 함께 추진하는 엔터프라이즈 PMS 구축 프로젝트로, 향후 PMS 사업 확장을 이끌 대형 전략 사업의 시작점",
+    tags: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "pnpm"],
+    path: "/project/hyundai-pms",
   },
   {
     id: "flow-drive",
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     tags: [
       "Preact",
       "Java",
-      "javascript",
+      "JavaScript",
       "PostgreSQL",
       "jQuery",
       "Jex Framework",
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     period: "2024.12.01 - 2025.03.21",
     description:
       "개인 및 프로젝트 캘린더를 통합하고 구글 캘린더 연동, 타임존, 반복일정 등을 지원하는 통합 캘린더 시스템 개발",
-    tags: ["Java", "javascript", "PostgreSQL", "jQuery", "Jex Framework"],
+    tags: ["Java", "JavaScript", "PostgreSQL", "jQuery", "Jex Framework"],
     path: "/project/flow-calendar",
   },
   {
@@ -119,10 +119,10 @@ export const projects: Project[] = [
       "OpenAI API와 Function Calling을 활용한 업무 검색 및 프로젝트 템플릿 생성 AI 기능 개발 및 Node.js 기반 LLM 서버 구축",
     tags: [
       "OpenAI",
-      "node.js",
-      "express",
+      "Node.js",
+      "Express",
       "Java",
-      "javascript",
+      "JavaScript",
       "PostgreSQL",
       "jQuery",
       "Jex Framework",
@@ -136,7 +136,7 @@ export const projects: Project[] = [
     period: "2023.01.25 - 2023.04.19",
     description:
       "환경별 다운로드 정책, IP 화이트리스트, 로그인 보안 등 철저한 로깅을 통한 기업 데이터 보안 체계 구축",
-    tags: ["Java", "javascript", "PostgreSQL", "jQuery", "Jex Framework"],
+    tags: ["Java", "JavaScript", "PostgreSQL", "jQuery", "Jex Framework"],
     path: "/project/flow-security",
   },
   {
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     period: "2022.11.30 - 2023.01.06",
     description:
       "다양한 요금제 생성 및 플랜별 기능 제한 매칭 시스템 개발로 유연한 정책 변경 및 고객 맞춤 서비스 제공",
-    tags: ["Java", "javascript", "PostgreSQL", "jQuery", "Jex Framework"],
+    tags: ["Java", "JavaScript", "PostgreSQL", "jQuery", "Jex Framework"],
     path: "/project/flow-plan",
   },
   {
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     period: "2021.11.10 - 2022.01.05",
     description:
       "타겟팅, 다국어 지원, 타임존 기반 예약 게시를 통한 공지사항 및 배너 관리 시스템 개발",
-    tags: ["Java", "javascript", "PostgreSQL", "jQuery", "Jex Framework"],
+    tags: ["Java", "JavaScript", "PostgreSQL", "jQuery", "Jex Framework"],
     path: "/project/flow-notice",
   },
   {
@@ -166,7 +166,7 @@ export const projects: Project[] = [
     period: "2022.11.07 - 2022.11.29",
     description:
       "분산된 2개의 마스터어드민을 통합하고 고객 및 기업 관리에 중점을 둔 CX팀 지원 시스템 개발",
-    tags: ["Java", "javascript", "PostgreSQL", "jQuery", "Jex Framework"],
+    tags: ["Java", "JavaScript", "PostgreSQL", "jQuery", "Jex Framework"],
     path: "/project/flow-master",
   },
   {
@@ -176,7 +176,7 @@ export const projects: Project[] = [
     period: "2021.10.12 - 현재",
     description:
       "SES 이메일, 퇴사자 관리, 파트너 시스템, 알림/댓글 필터, GA 사용자 분석, 모니터링 구축 등 서비스 안정성 및 성능 개선",
-    tags: ["Java", "javascript", "PostgreSQL", "jQuery", "Jex Framework"],
+    tags: ["Java", "JavaScript", "PostgreSQL", "jQuery", "Jex Framework"],
     path: "/project/flow-qa",
   },
   {
@@ -210,7 +210,7 @@ export const projects: Project[] = [
       "C#",
       "ASP.NET WebForms",
       "MS-SQL",
-      "javaScript",
+      "JavaScript",
       "jQuery",
       "Infragistics",
     ],
@@ -229,7 +229,7 @@ export const projects: Project[] = [
       "MS-SQL",
       "ASP",
       "Visual Basic",
-      "javaScript",
+      "JavaScript",
       "jQuery",
       "Infragistics",
     ],
@@ -246,7 +246,7 @@ export const projects: Project[] = [
       "C#",
       "ASP.NET MVC",
       "MS-SQL",
-      "javaScript",
+      "JavaScript",
       "jQuery",
       "Infragistics",
     ],

@@ -115,11 +115,11 @@ const raw: Skill[] = [
   {
     id: "zustand",
     name: "Zustand",
-    imageUrl: "/skills/redux.svg",
+    imageUrl: "/skills/zustand.webp",
     priority: "high",
     category: "Frontend",
     type: "etc",
-    color: "#764ABC",
+    color: "#433E38",
   },
   {
     id: "react-query",

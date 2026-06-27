@@ -4,7 +4,7 @@ import { generatePageMetadata } from "@/lib/metadata";
 export const metadata = generatePageMetadata({
   title: "CJ 온트너 (CJ Onstyle Partner) 플로우 커스텀 | 엔터프라이즈 커머스 플랫폼",
   description:
-    "CJ ENM 커머스의 엔터프라이즈 사업을 위한 플로우 커스텀 플랫폼 프로젝트입니다. 개발비 2억 원 이상 · 연간 운영 계약 4천만 원 규모로 진행되었으며, CJ와 인플루언서, 팔로워, 사업자 간 소통을 위한 파트너스 플랫폼을 구축했습니다. 서버 개발 및 PL로 참여하여 Artillery 부하 테스트 기반 병목 개선과 백오피스 자체 구축 등 운영 전반을 주도했습니다.",
+    "CJ ENM 커머스의 엔터프라이즈 사업을 위한 플로우 커스텀 플랫폼 프로젝트입니다. CJ와 인플루언서, 팔로워, 사업자 간 소통을 위한 파트너스 플랫폼을 구축했으며, 서버 개발 및 PL로 참여하여 Artillery 부하 테스트 기반 병목 개선과 백오피스 자체 구축 등 운영 전반을 주도했습니다.",
   keywords: [
     "CJ 온트너",
     "CJ Onstyle Partner",
@@ -55,11 +55,12 @@ export default function CjOntnerProjectPage() {
               <strong className="text-foreground">
                 CJ 온트너(CJ Onstyle Partner) 전용 플랫폼
               </strong>
-              으로 구축한 프로젝트입니다. 개발비{" "}
-              <strong className="text-foreground">2억 원 이상</strong>, 연간
-              운영 계약 <strong className="text-foreground">4천만 원</strong>{" "}
-              규모로 진행되었으며, 유입되는 인플루언서와 팔로워가 늘어날수록
-              수익이 확장되는 구조의 사업 모델입니다.
+              으로 구축한{" "}
+              <strong className="text-foreground">
+                대형 엔터프라이즈 커머스 프로젝트
+              </strong>
+              입니다. 유입되는 인플루언서와 팔로워가 늘어날수록 수익이 확장되는
+              구조의 사업 모델입니다.
             </p>
             <p>
               CJ와 인플루언서, 인플루언서와 팔로워, 사업자와 인플루언서 간의{" "}

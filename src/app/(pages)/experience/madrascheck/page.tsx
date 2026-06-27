@@ -33,7 +33,7 @@ const projectCards = [
     title: "현대자동차 PMS 개발",
     period: "진행 중",
     description:
-      "현대자동차와 마드라스체크가 함께 추진하는 엔터프라이즈 PMS 구축 프로젝트로, 초기 계약 20억 원 규모의 전략 사업",
+      "현대자동차와 마드라스체크가 함께 추진하는 엔터프라이즈 PMS 구축 프로젝트로, 향후 PMS 사업 확장을 이끌 대형 전략 사업",
   },
   {
     id: "cj-ontner",
@@ -118,7 +118,7 @@ export default function MadrasCheckExperiencePage() {
       <div className="space-y-4">
         <div className="space-y-1">
           <h2 className="text-xl font-semibold">SaaS 서비스 풀스택 개발자</h2>
-          <p className="text-muted-foreground">2021.10.12. - 현재</p>
+          <p className="text-muted-foreground">2021.10.12 - 현재</p>
           <p className="text-muted-foreground">
             협업툴 플로우(flow) SaaS 서비스의 기능 개발과 모니터링 및 장애 대응
             등 안정적인 운영을 담당하며 제품 가치 향상에 기여하고 있습니다.
