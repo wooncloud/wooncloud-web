@@ -43,7 +43,7 @@ export default function CjOntnerProjectPage() {
         "Next.js",
         "Artillery",
       ]}
-      period="~ 2026.04.21"
+      period="2025.10.30 - 2026.04.21 (유지보수 중)"
       company="마드라스체크(주) · SaaS 개발부 · 서버 개발 / PL"
     >
         <div className="space-y-3">
@@ -68,6 +68,11 @@ export default function CjOntnerProjectPage() {
                 커뮤니케이션 및 사업 협의
               </strong>
               를 위한 파트너스 플랫폼 역할을 하도록 플로우를 확장했습니다.
+            </p>
+            <p>
+              2025년 10월 착수해 구축을 완료한 뒤, 현재는 안정적인 운영을 위한{" "}
+              <strong className="text-foreground">유지보수</strong>를 담당하고
+              있습니다.
             </p>
           </div>
         </div>

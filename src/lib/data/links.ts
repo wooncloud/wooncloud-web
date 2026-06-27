@@ -1,4 +1,4 @@
-import { Github, Rss } from "lucide-react";
+import { Github, Rss, BookOpen } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 export interface Link {
@@ -13,7 +13,7 @@ export interface Link {
 export const links: Link[] = [
   {
     id: "blog",
-    url: "https://wooncloud.tistory.com",
+    url: "https://blog.wooncloud.com",
     icon: Rss,
     label: "블로그 (blog)",
     ariaLabel: "운구름의 개발 블로그로 이동",
@@ -31,5 +31,12 @@ export const links: Link[] = [
     iconSrc: "/resources/linkedin.svg",
     label: "링크드인 (linkedin)",
     ariaLabel: "운구름의 LinkedIn 프로필로 이동",
+  },
+  {
+    id: "tistory",
+    url: "https://wooncloud.tistory.com",
+    icon: BookOpen,
+    label: "티스토리 (tistory)",
+    ariaLabel: "운구름의 티스토리 블로그로 이동",
   },
 ];

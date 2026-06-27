@@ -31,14 +31,14 @@ const projectCards = [
   {
     id: "hyundai-pms",
     title: "현대자동차 PMS 개발",
-    period: "진행 중",
+    period: "~ 2026.04 (TFT 발령으로 이탈)",
     description:
       "현대자동차와 마드라스체크가 함께 추진하는 엔터프라이즈 PMS 구축 프로젝트로, 향후 PMS 사업 확장을 이끌 대형 전략 사업",
   },
   {
     id: "cj-ontner",
     title: "CJ 온트너 플로우 커스텀",
-    period: "~ 2026.04.21",
+    period: "2025.10.30 - 2026.04.21 (유지보수 중)",
     description:
       "CJ ENM 커머스의 엔터프라이즈 파트너스 플랫폼으로 플로우를 커스텀한 프로젝트. 서버 개발 및 PL로 참여",
   },

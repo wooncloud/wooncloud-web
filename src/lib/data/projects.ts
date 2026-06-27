@@ -35,7 +35,7 @@ export const projects: Project[] = [
     id: "cj-ontner",
     title: "CJ 온트너 (CJ Onstyle Partner) 플로우 커스텀",
     icon: Handshake,
-    period: "~ 2026.04.21",
+    period: "2025.10.30 - 2026.04.21 (유지보수 중)",
     description:
       "CJ ENM 커머스의 엔터프라이즈 사업을 위한 플로우 커스텀 파트너스 플랫폼으로, 대형 엔터프라이즈 프로젝트에서 서버 개발 및 PL 담당",
     tags: [
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     id: "hyundai-pms",
     title: "현대자동차 PMS 개발",
     icon: Car,
-    period: "진행 중",
+    period: "~ 2026.04 (TFT 발령으로 이탈)",
     description:
       "현대자동차와 마드라스체크가 함께 추진하는 엔터프라이즈 PMS 구축 프로젝트로, 향후 PMS 사업 확장을 이끌 대형 전략 사업의 시작점",
     tags: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "pnpm"],

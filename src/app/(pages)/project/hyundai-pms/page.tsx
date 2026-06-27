@@ -25,7 +25,7 @@ export default function HyundaiPmsProjectPage() {
     <ProjectPageShell
       title="현대자동차 PMS 개발"
       tags={["TypeScript", "Next.js", "NestJS", "PostgreSQL", "pnpm"]}
-      period="진행 중"
+      period="~ 2026.04 (TFT 발령으로 이탈)"
       company="마드라스체크(주) · SaaS 개발부 · 개발 참여"
     >
         <div className="space-y-3">
@@ -45,7 +45,12 @@ export default function HyundaiPmsProjectPage() {
             <p>
               개발 참여 인원으로 합류하여 TypeScript와 Next.js 기반의 프론트엔드,
               NestJS 기반의 백엔드, PostgreSQL 데이터 계층을 아우르는 풀스택
-              개발에 기여하고 있습니다.
+              개발에 기여했습니다.
+            </p>
+            <p>
+              이후 Flow 드라이브 합류를 위한{" "}
+              <strong className="text-foreground">TFT 발령</strong>으로 2026년 4월
+              본 프로젝트에서 이탈했습니다.
             </p>
           </div>
         </div>
