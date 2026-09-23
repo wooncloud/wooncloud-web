@@ -13,7 +13,11 @@ const structuredData = {
   name: "운구름",
   alternateName: "운구름",
   url: SITE_URL,
-  sameAs: ["https://wooncloud.tistory.com", "https://github.com/wooncloud"],
+  sameAs: [
+    "https://blog.wooncloud.com",
+    "https://wooncloud.tistory.com",
+    "https://github.com/wooncloud",
+  ],
   jobTitle: "SaaS Full-Stack Developer",
   worksFor: [
     {

@@ -11,6 +11,8 @@ import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 import FloatingButton from "@/components/FloatingButton";
 import Section from "@/components/Section";
+import BlogPosts from "@/components/BlogPosts";
+import { getRecentPosts } from "@/lib/blog";
 import {
   UserRound,
   Wrench,
@@ -19,6 +21,7 @@ import {
   Sparkles,
   Award,
   GraduationCap,
+  Newspaper,
 } from "lucide-react";
 
 const certifications = [
@@ -46,7 +49,9 @@ const education = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getRecentPosts();
+
   return (
     <div className="p-6 px-4">
       <header className="py-4">
@@ -110,6 +115,12 @@ export default function Home() {
       <Section id="project" title="Project" icon={FolderGit2}>
         <Project />
       </Section>
+
+      {posts.length > 0 && (
+        <Section id="blog" title="Recent Posts" icon={Newspaper}>
+          <BlogPosts posts={posts} />
+        </Section>
+      )}
 
       <Section
         id="activities"
